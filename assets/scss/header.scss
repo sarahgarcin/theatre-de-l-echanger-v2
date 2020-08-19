@@ -1,0 +1,127 @@
+// -------------- MOBILE-FIRST HEADER --------------
+
+header{
+	width: 100%;
+	max-width: 100%;
+	position: fixed;
+	left:0;
+	top:0; 
+	background: $mainColor;
+	z-index: 100; 
+	align-items: center;
+	padding: 0px;
+	&.row{margin:0;}
+	a{text-decoration:none;}
+	.logo{
+		width: 300px;
+		padding: 0 $marginBig;
+	}
+	// .mobile-menu_btn{
+	// 	display:block;
+	// 	position:relative;
+	// 	margin:0px 50px;
+	// 	cursor:pointer;
+	// 	height:24px;
+	// 	span {
+	// 	  display:block;
+	// 	  background:#FFF;
+	// 	  height:2px;
+	// 	  width:35px;
+	// 	  position:absolute;
+	// 	  transition:all 0.5s ease;
+	// 	}
+	// 	span:nth-child(1){top:0px;}
+	// 	span:nth-child(2){top:10px;}
+	// 	span:nth-child(3){top:20px;}
+
+	// 	.transparent {opacity:0;}
+	// 	.rotate-top{transform:rotatez(45deg);-webkit-transform-origin:0%;left:2px}
+	// 	.rotate-bottom{transform:rotatez(-45deg);-webkit-transform-origin: 15%;}
+	// }
+	// .nav{
+	// 	max-height:0; 
+	// 	overflow:hidden; 
+	// 	margin:0;
+	// 	padding-left: 25px;
+	// 	width: 100%;
+	// 	transition: all 1s linear;
+	// 	font-size: $menuSize;
+	// 	font-weight: 500;
+	// 	&.active{
+	// 		max-height: 100vh; 
+	// 		overflow: auto;
+	// 	}
+	// }
+	// .main-nav{
+	// 	margin-top: $marginSmall;
+	// 	margin-bottom: $marginNormal;
+	// 	padding-left:0;
+	// 	li{
+	// 		list-style: none;
+	// 		color:#FFF;
+	// 		flex: 1 1 0;
+	// 		display: flex;
+	// 		margin-bottom: $marginSmall;
+	// 		a{
+	// 			color: #FFF;
+	// 			&:hover{
+	// 				color: #FFF;
+	// 				border-bottom: 2px solid currentcolor;
+	// 			}
+	// 		}
+	// 		&.active{
+	// 			a{
+	// 				color: #FFF;
+	// 				border-bottom: 2px solid currentcolor;
+	// 				&::before{
+	// 					background-size: 100% 100%;
+	// 				}
+	// 			}
+	// 		}				
+	// 	}
+	// }
+	// .main-nav_first-level{
+	// 	font-weight: 700;
+	// 	margin: 0px 10px 0px 0px; 
+	// 	display: block;
+
+	// }
+}
+
+
+// -------------- DESKTOP HEADER --------------
+@media only screen and (min-width: 48em){
+	// header{
+	// 	.mobile-menu_logo, .desktop-menu_logo{
+	// 		padding: $marginSmall $marginBig;
+	// 	}
+		// .nav{ 
+		// 	height:auto; 
+		// 	min-height:auto;
+		// 	max-height: none;
+		// 	padding-left: $marginBig;
+		// }
+		// .main-nav_first-level{
+		// 	margin:0;
+		// 	display: flex;
+		// 	flex: 2;
+		// }
+		// .main-nav{
+		// 	margin-top:0;
+		// 	margin-bottom: 0;
+		// 	// padding: 5px 0 $marginSmall $marginSmall;
+		// 	li{
+		// 		text-align: center;
+		// 		justify-content: center;
+		// 		margin-bottom: 0;
+		// 		a::before{
+		// 			display:block;
+		// 			margin: 8px auto;
+		// 		}
+		// 	}
+		// }
+		// .desktop-menu{
+		// 	padding: 0;
+		// }
+	// }
+}

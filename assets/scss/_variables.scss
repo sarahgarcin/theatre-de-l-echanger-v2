@@ -1,0 +1,31 @@
+@import '../fonts/stylesheet.css';
+
+// Margin variables
+$marginNormal: 20px;  
+$marginBig: $marginNormal *2;  
+$marginSmall: $marginNormal/2;
+
+// Colors
+$mainColor: #fff200;
+$backgroundColor: #FFF;
+$gris: #3F3F3F;
+
+// Fonts
+$font: "Avenir", sans-serif;
+$titleFont: "LMDLD", sans-serif;
+$subtitleFont: "Bebas", sans-serif;
+
+// FontSize
+$menuSize: 16px;
+$textSize: 19px;
+$titleSize: 2em;
+$smallText: 0.8em;
+ 
+// Mixins
+@mixin center{
+	display: block;
+	position: relative; 
+	top: 50%;
+	transform: translateY(-50%);
+}
+

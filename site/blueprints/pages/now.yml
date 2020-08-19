@@ -1,0 +1,11 @@
+title: En ce moment
+preset: page
+pages: false
+
+fields:
+  actu: 
+    label: Sélectionnez le spectacle du moment
+    type: select
+    options: query
+    query: site.index.template("spectacle")
+

@@ -1,0 +1,274 @@
+@charset "UTF-8";
+@import url(../fonts/stylesheet.css);
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+body {
+  margin: 0;
+  font-size: 19px;
+  font-family: "Avenir", sans-serif;
+  background: #FFF;
+  line-height: 1.4;
+  color: #000;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; }
+
+ul, ol {
+  margin: 0;
+  padding: 0; }
+
+li {
+  list-style: none; }
+
+a {
+  color: #3F3F3F;
+  text-decoration: none; }
+
+a:visited {
+  color: #000; }
+
+a:hover {
+  color: #000; }
+
+img {
+  width: 100%; }
+
+figure {
+  margin: 0; }
+
+figcaption {
+  font-size: 0.8em; }
+  figcaption::before {
+    content: '⬇ '; }
+  figcaption p {
+    margin: 0;
+    font-size: 0.8em;
+    display: inline-block; }
+
+p {
+  font-size: 19px; }
+  p:last-child {
+    margin-bottom: 0; }
+
+h1 {
+  font-size: 3rem;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  font-weight: 500;
+  font-family: "LMDLD", sans-serif;
+  color: #3F3F3F; }
+
+h2 {
+  color: #3F3F3F;
+  font-size: 40px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  font-family: "LMDLD", sans-serif;
+  font-weight: normal;
+  margin: 0; }
+
+h2 + ul {
+  margin-top: 20px; }
+
+h3 {
+  font-size: 19px;
+  font-weight: normal;
+  margin: 0; }
+
+h4 {
+  font-weight: normal;
+  margin: 0; }
+
+h5 {
+  margin-top: 40px;
+  margin-bottom: 10px; }
+
+blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  border-left: 5px solid rgba(17, 33, 77, 0.2); }
+
+video, iframe {
+  width: 100%; }
+
+figure.border {
+  border: 0.1em solid rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); }
+
+strong {
+  font-weight: normal;
+  background: #fff200; }
+
+header {
+  width: 100%;
+  max-width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: #fff200;
+  z-index: 100;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0px; }
+  header.row {
+    margin: 0; }
+  header a {
+    text-decoration: none; }
+  header .logo {
+    width: 300px;
+    padding: 0 40px; }
+
+.show-for-small-only {
+  display: block; }
+
+.hide-for-small-only {
+  display: none; }
+
+main {
+  padding: 85px 0 0 0;
+  font-size: 19px;
+  width: 100%;
+  margin: 0px auto;
+  min-height: 83vh; }
+  main .content {
+    position: relative;
+    padding: 0 40px; }
+    main .content figure {
+      margin: 20px 0; }
+    main .content ol {
+      padding-left: 40px; }
+      main .content ol li {
+        list-style: decimal; }
+
+.prog-list-wrapper {
+  padding: 0 40px; }
+  .prog-list-wrapper > ul > li {
+    padding: 40px; }
+  .prog-list-wrapper h2 {
+    font-size: 2em; }
+  .prog-list-wrapper .hours p {
+    margin-top: 0; }
+  .prog-list-wrapper h3 {
+    font-size: 19px;
+    color: #3F3F3F;
+    font-family: "Bebas", sans-serif;
+    letter-spacing: 0.02em;
+    margin: 10px 0px 20px 0; }
+  .prog-list-wrapper h4 {
+    font-size: 19px;
+    color: #3F3F3F;
+    font-family: "Bebas", sans-serif;
+    letter-spacing: 0.02em;
+    margin-bottom: 10px; }
+  .prog-list-wrapper .lien-billeterie, .prog-list-wrapper .pdfs-wrapper > li {
+    margin-top: 15px;
+    border-left: 4px solid #fff200;
+    padding: 4px 10px;
+    text-transform: uppercase;
+    font-family: "Bebas", sans-serif;
+    letter-spacing: 0.02em; }
+    .prog-list-wrapper .lien-billeterie a, .prog-list-wrapper .pdfs-wrapper > li a {
+      color: #3F3F3F;
+      -webkit-transition: color 0.5s ease;
+      -o-transition: color 0.5s ease;
+      transition: color 0.5s ease; }
+      .prog-list-wrapper .lien-billeterie a:hover, .prog-list-wrapper .pdfs-wrapper > li a:hover {
+        color: #000; }
+  .prog-list-wrapper .credits-text p {
+    font-size: 0.8em; }
+
+footer {
+  background: #fff200;
+  padding: 20px 40px;
+  font-family: "Bebas", sans-serif;
+  letter-spacing: 0.02em; }
+  footer p {
+    margin: 0; }
+  footer .socialnetworks {
+    text-align: right; }
+
+.big-menu li {
+  height: 83vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: saturation;
+  background-position: center;
+  border-left: 1px solid #3F3F3F;
+  padding: 0;
+  position: relative; }
+  .big-menu li a {
+    height: 83vh;
+    display: block;
+    background-color: rgba(255, 255, 255, 0.1);
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out; }
+    .big-menu li a .yellow-pattern {
+      width: 100%;
+      position: absolute;
+      top: -40px;
+      left: 0;
+      height: 83vh;
+      overflow: hidden; }
+    .big-menu li a .big-menu-text {
+      display: block;
+      position: relative;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      color: #FFF;
+      text-align: center;
+      font-family: "Bebas", sans-serif;
+      font-size: 2em;
+      text-shadow: 0px 0px 4px #333; }
+      .big-menu li a .big-menu-text .infos-spectacle {
+        width: 60%;
+        margin: auto;
+        padding: 10px; }
+        .big-menu li a .big-menu-text .infos-spectacle h2 {
+          font-size: 0.8em;
+          font-family: "Bebas", sans-serif;
+          color: #FFF; }
+        .big-menu li a .big-menu-text .infos-spectacle h3, .big-menu li a .big-menu-text .infos-spectacle .hours p {
+          font-size: 16px;
+          font-family: "Bebas", sans-serif;
+          margin-top: 0; }
+    .big-menu li a:hover {
+      background-color: transparent; }
+
+main .content.spectacle {
+  padding: 40px 0; }
+  main .content.spectacle .lien-billeterie, main .content.spectacle .pdfs-wrapper {
+    display: inline-block; }
+  main .content.spectacle .lien-billeterie {
+    margin-left: 40px; }
+
+main .content.programmation {
+  padding: 0 40px; }
+  main .content.programmation h2 {
+    font-size: 30px; }
+
+main .content.article {
+  padding: 40px 40px; }
+  main .content.article .right-col ul {
+    margin-left: 40px; }
+    main .content.article .right-col ul li {
+      list-style: disc;
+      margin-bottom: 10px; }
+
+@media only screen and (min-width: 48em) {
+  .show-for-small-only {
+    display: none !important; }
+  .hide-for-small-only {
+    display: block !important; }
+  main .content {
+    padding: 0; } }

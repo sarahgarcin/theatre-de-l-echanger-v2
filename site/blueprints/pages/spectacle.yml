@@ -1,0 +1,50 @@
+title: Spectacle
+preset: page
+pages: false
+
+fields:
+  cover: 
+    label: Image de couverture
+    type: files
+    mode: single
+  covermenu: 
+    label: Image de couverture pour le menu
+    type: files
+    mode: single
+  coveryellow: 
+    label: Filtre jaune de couverture pour le menu
+    type: files
+    mode: single
+  genre: 
+    label: Genre
+    type: text
+  distribution: 
+    label: Distribution
+    type: textarea
+  dates: 
+    label: Dates 
+    type: markdown
+  hours: 
+    label: Heures et infos complémentaires
+    type: markdown
+  text: 
+    label: Texte de présentation 
+    type: markdown
+  credits: 
+    label: Crédits
+    type: markdown
+  pdfs: 
+    label: pdfs
+    type: structure
+    fields: 
+      title: 
+        label: Titre
+        type: text
+      pdf: 
+        label: pdf
+        type: files
+  billeterie:
+    label: Lien billeterie
+    type: url
+
+

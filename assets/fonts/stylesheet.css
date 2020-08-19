@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'LMDLD';
+    src: url('LMDLD.woff2') format('woff2'),
+        url('LMDLD.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bebas';
+    src: url('BebasNeue.woff2') format('woff2'),
+        url('BebasNeue.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('AvenirNextLTPro-Cn.woff2') format('woff2'),
+        url('AvenirNextLTPro-Cn.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+

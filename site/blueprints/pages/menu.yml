@@ -1,0 +1,40 @@
+title: Menu
+
+columns:
+  left:
+    width: 2/3
+    sections:
+      drafts:
+        headline: Brouillons
+        type: pages
+        status: draft
+        templates: 
+          - default
+          - spectacle
+          - programmation
+      published:
+        headline: Publiées
+        type: pages
+        status: listed
+        templates: 
+          - default
+          - spectacle
+          - programmation
+  right:
+    width: 1/3
+    sections:
+      images:
+        headline: Images
+        type: files
+        template: list
+      content:
+        type: fields
+        fields:
+          cover:
+            label: Photo de couverture
+            type: files
+          coveryellow: 
+            label: Filtre jaune de couverture
+            type: files
+            mode: single
+            width: 1/2

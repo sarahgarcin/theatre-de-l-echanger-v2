@@ -1,0 +1,327 @@
+  // I M P O R T
+  // -------------- MOBILE-FIRST --------------
+  @import "_variables.scss";
+
+  *{
+    box-sizing: border-box;
+  	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body{
+  	margin: 0; 
+    font-size: $textSize; 
+    font-family: $font;
+    background: $backgroundColor;
+    line-height: 1.4;
+    color: #000;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden; 
+  }
+
+  // -------------- RESET.CSS --------------
+  ul, ol{margin:0; padding:0;}
+  li{list-style:none;}
+  a{color: $gris;text-decoration: none;}
+  a:visited{color: #000;}
+  a:hover{color: #000;}
+  img {width: 100%;}
+  figure{margin:0;}
+  figcaption{
+    font-size: $smallText;
+    &::before{
+      content: '⬇ ';
+    }
+    p{
+      margin:0; 
+      font-size: $smallText;
+      display: inline-block;
+    }
+  }
+  p{
+    font-size: $textSize; 
+    &:last-child{
+      margin-bottom:0;
+    }
+  }
+  
+  h1{
+    font-size: 3rem;
+    margin-top:$marginSmall;
+    margin-bottom: $marginNormal;
+    line-height: 1.2;
+    font-weight: 500;
+    font-family: $titleFont;
+    color: $gris;
+  }
+  h2{
+    color: $gris;
+    font-size: 40px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    font-family: $titleFont;
+    font-weight: normal;
+    margin:0;
+  }
+
+  h2 + ul{
+    margin-top: $marginNormal;
+  }
+
+  h3{
+    font-size:$textSize; 
+    font-weight: normal;
+    margin:0;
+  }
+
+
+  h4{
+    font-weight: normal;
+    margin: 0; 
+  }
+
+  h5{
+    margin-top: $marginBig;
+    margin-bottom: $marginSmall;
+  }
+
+  blockquote{
+    padding: 10px 20px;
+    margin: 0 0 20px;
+    border-left: 5px solid rgba(17, 33, 77, 0.2);
+  }
+
+
+  video, iframe{
+    width: 100%;
+  }
+
+  figure{
+    &.border{
+      border: 0.1em solid rgba(0,0,0,.1);
+      box-shadow: 0 1px 4px rgba(0,0,0,.1);
+    }
+  }
+
+  strong{
+    font-weight: normal;
+    background: $mainColor;
+  }
+
+
+  // -------------- IMPORT TEMPlATES STYLES --------------
+  @import "header.scss";
+  @import "home.scss";
+
+
+  // -------------- MOBILE-FIRST GENERAL --------------
+  .show-for-small-only{
+  	display:block;
+  }
+
+  .hide-for-small-only{
+  	display:none;
+  }
+
+  main{
+    padding: 85px 0 0 0; 
+    font-size: $textSize;
+    width: 100%;
+    margin:0px auto;
+    min-height: 83vh;
+    .content{
+      position: relative;
+      padding: 0 $marginBig;
+      figure{
+        margin: $marginNormal 0;
+      }
+      ol{
+        padding-left: $marginBig;
+        li{
+          list-style: decimal;
+        }
+      }
+    }
+  } 
+
+  .prog-list-wrapper{
+    padding: 0 $marginBig;
+    & > ul > li{
+      padding: $marginBig;
+    }
+    h2{
+      font-size: $titleSize;
+    }
+    .hours{
+      p{
+        margin-top:0;
+      }
+    }
+    h3{
+      font-size: 19px;
+      color: $gris; 
+      font-family: $subtitleFont; 
+      letter-spacing: 0.02em; 
+      margin: $marginSmall 0px $marginNormal 0;
+    }
+
+    h4{
+      font-size: 19px;
+      color: $gris; 
+      font-family: $subtitleFont; 
+      letter-spacing: 0.02em; 
+      margin-bottom: $marginSmall;
+    }
+    .lien-billeterie, .pdfs-wrapper > li{
+      margin-top: 15px;
+      border-left: 4px solid $mainColor;
+      padding: 4px $marginSmall; 
+      text-transform: uppercase;
+      font-family: $subtitleFont;
+      a{color: $gris; transition:color 0.5s ease; &:hover{color: #000;}}
+      letter-spacing: 0.02em; 
+    }
+    .credits-text{
+      p{
+        font-size: $smallText; 
+      }
+    }
+
+  }
+
+  footer{
+    background: $mainColor; 
+    padding: $marginNormal $marginBig;
+    font-family: $subtitleFont;
+    letter-spacing: 0.02em; 
+    p{
+      margin:0;
+    }
+    .socialnetworks{
+      text-align: right;
+    }
+  }
+
+// -------------- GABARIT MENU GENERAL --------------
+.big-menu{
+  li{
+    height: 83vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: saturation;
+    background-position: center;  
+    border-left: 1px solid $gris;
+    padding:0;
+    position: relative;
+    // filter: grayscale(1);
+    a{
+      height: 83vh;
+      display:block;
+      background-color: rgba(255, 255, 255, 0.1);
+      // background-color: yellow; 
+      // background-size: cover;
+      // background-repeat: no-repeat;
+      transition: all 0.5s ease-in-out;
+      .yellow-pattern{
+        width: 100%;
+        // mix-blend-mode: multiply; 
+        position: absolute; 
+        top:-40px; 
+        left:0;
+        height: 83vh;
+        overflow: hidden;
+      }
+      .big-menu-text{
+        @include center;
+        color: #FFF;
+        text-align: center; 
+        font-family: $subtitleFont;
+        font-size: 2em; 
+        text-shadow: 0px 0px 4px #333;
+        .infos-spectacle{
+          // background-color: #FFF;
+          // color: $gris;
+          // text-shadow: none;
+          width: 60%;
+          margin:auto;
+          padding: $marginSmall;
+          h2{
+            font-size: $smallText;
+            font-family: $subtitleFont;
+            color: #FFF;
+          } 
+          h3, .hours p{
+            font-size: $menuSize;
+            font-family: $subtitleFont;
+            margin-top: 0;
+          }
+        }
+      }
+      &:hover{
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+// -------------- GABARIT SPECTACLE GENERAL --------------
+main .content.spectacle{
+  padding: $marginBig 0;
+  .lien-billeterie, .pdfs-wrapper{
+    display: inline-block;
+  }
+  .lien-billeterie{
+    margin-left: $marginBig;
+  }
+
+}
+
+
+// -------------- GABARIT PROGRAMMATION GENERAL --------------
+
+main .content.programmation{
+  padding: 0 $marginBig;
+  h2{
+    font-size: 30px;
+  }
+}
+
+// -------------- GABARIT ARTICLE GENERAL --------------
+
+main .content.article{
+  padding: $marginBig $marginBig;
+  .right-col{
+    ul{
+      margin-left: $marginBig;
+      li{
+        list-style: disc; 
+        margin-bottom: $marginSmall;
+      }
+    }
+  }
+}
+
+
+// -------------- DESKTOP GENERAL --------------
+@media only screen and (min-width: 48em){
+  .show-for-small-only{
+      display:none !important;
+  }
+  .hide-for-small-only{
+      display:block !important;
+  }
+
+  main {
+    .content{
+      padding: 0; 
+    }
+  }
+
+}
+
+
+
+
+

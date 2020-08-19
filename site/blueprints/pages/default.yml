@@ -1,0 +1,34 @@
+title: Article
+preset: page
+pages: false
+
+fields:
+  cover: 
+    label: Image de couverture
+    type: files
+    mode: single
+    width: 1/2
+  coveryellow: 
+    label: Filtre jaune de couverture
+    type: files
+    mode: single
+    width: 1/2
+  imgleft: 
+    label: Image colonne de gauche
+    type: files
+    mode: single
+    width: 1/2
+  infos: 
+    label: Texte synthétique
+    type: markdown
+    size: small
+    help: S'affiche dans la colonne de gauche
+  text:
+    label: Texte
+    type: markdown
+    size: medium
+    help: S'affiche dans la colonne de droite
+  imageslist: 
+    label: Images
+    type: files
+

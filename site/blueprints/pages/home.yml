@@ -1,0 +1,23 @@
+title: Accueil
+preset: page
+pages: false
+
+fields:
+  cover:
+    label: Photo de couverture
+    type: files
+  maintenance:
+    label: Texte - site en maintenance
+    type: markdown
+  edito: 
+    label: Édito 
+    type: markdown
+  ateliers: 
+    label: Texte - ateliers
+    type: markdown
+  pass: 
+    label: Texte - pass illimité
+    type: markdown
+  
+
+
