@@ -3,7 +3,7 @@
 
 	<main>
 		<div class="content prog-list-wrapper spectacle row">
-			<div class="left-spectacle col-xs-5">
+			<div class="left-spectacle col-xs-12 col-sm-5">
 				<?php if($image = $page->cover()->toFile()):?>
 					<div class="prog-cover-wrapper">
 						<?= $image->thumb([
@@ -14,7 +14,7 @@
 					</div>
 				<?php endif;?>				
 			</div>
-			<div class="right-spectacle col-xs-6">
+			<div class="right-spectacle col-xs-12 col-sm-6">
 				<h4><?= $page->genre()->html()?></h4>
 				<h2><?= $page->title()->html()?></h2>
 				<h3>

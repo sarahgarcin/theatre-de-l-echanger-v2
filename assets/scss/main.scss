@@ -117,7 +117,6 @@
 
   // -------------- IMPORT TEMPlATES STYLES --------------
   @import "header.scss";
-  @import "home.scss";
 
 
   // -------------- MOBILE-FIRST GENERAL --------------
@@ -130,14 +129,13 @@
   }
 
   main{
-    padding: 85px 0 0 0; 
+    padding: 70px 0 0 0; 
     font-size: $textSize;
     width: 100%;
     margin:0px auto;
-    // min-height: 83vh;
     .content{
       position: relative;
-      padding: 0 $marginBig;
+      padding: 0;
       figure{
         margin: $marginNormal 0;
       }
@@ -147,14 +145,20 @@
           list-style: decimal;
         }
       }
+      .image-gallery{
+        figure{
+          margin:$marginSmall 0;
+        }
+      }
     }
   } 
 
   .breadcrumb{
     width: 100%;
-    padding: $marginNormal $marginBig $marginSmall; 
+    padding: $marginNormal $marginNormal $marginSmall; 
     ol{
-      display: flex; 
+      display: flex;
+      flex-wrap: wrap; 
       li{
         margin-left: $marginSmall;
         font-size: $menuSize; 
@@ -175,6 +179,7 @@
       }
     }
   }
+
 
   .prog-list-wrapper{
     padding: 0 $marginBig;
@@ -223,7 +228,7 @@
 
   footer{
     background: $mainColor; 
-    padding: $marginNormal $marginBig;
+    padding: $marginNormal $marginNormal;
     font-family: $font;
     letter-spacing: 0.02em;
 
@@ -232,15 +237,20 @@
       font-size: $smallText;
     }
     .socialnetworks{
-      text-align: right;
+      text-align: left;
       font-family: $subtitleFont;
+      margin-top: $marginNormal;
+      ul{
+        display: flex;
+        justify-content: space-between;
+      } 
     }
   }
 
 // -------------- GABARIT MENU GENERAL --------------
 .big-menu{
   li{
-    height: 70vh;
+    height: 15vh;
     background-size: cover;
     background-repeat: no-repeat;
     background-blend-mode: saturation;
@@ -249,14 +259,10 @@
     padding:0;
     position: relative;
     cursor: pointer; 
-    // filter: grayscale(1);
     a{
-      height: 70vh;
+      height: 15vh;
       display:block;
       background-color: rgba(255, 255, 255, 0.1);
-      // background-color: yellow; 
-      // background-size: cover;
-      // background-repeat: no-repeat;
       transition: all 0.5s ease-in-out;
       .yellow-pattern{
         width: 100%;
@@ -264,7 +270,7 @@
         position: absolute; 
         top:-40px; 
         left:0;
-        height: 70vh;
+        height: 15vh;
         overflow: hidden;
       }
       .big-menu-text{
@@ -313,11 +319,15 @@ main .content.spectacle{
       padding: 0 3px;
     }
   }
+  .right-spectacle{
+    padding: $marginBig;
+  }
+
   .lien-billeterie, .pdfs-wrapper{
-    display: inline-block;
+    display: block;
   }
   .lien-billeterie{
-    margin-left: $marginBig;
+    margin-left: 0;
   }
 
 }
@@ -341,17 +351,15 @@ main .content.programmation{
 // -------------- GABARIT ARTICLE GENERAL --------------
 
 main .content.article{
-  padding: 0 $marginBig;
+  padding: 0 $marginNormal;
   margin-bottom: $marginBig*2;
   .left-col{
-    padding-right: $marginNormal;
     & > figure{
       margin-top: 0;
     }
   }
   .right-col{
-    padding-left: $marginNormal; 
-    border-left: 20px solid $mainColor;
+    border-left: $marginNormal solid $mainColor;
     ul{
       margin-left: $marginBig;
       li{
@@ -384,8 +392,68 @@ main .content.article{
   }
 
   main {
+    padding: 85px 0 0 0; 
     .content{
       padding: 0; 
+    }
+  }
+
+  .breadcrumb{
+    padding: $marginNormal $marginBig $marginSmall; 
+    ol{
+      li{
+
+      }
+    }
+  }
+
+  // -------------- GABARIT MENU GENERAL --------------
+  .big-menu{
+    li{
+      height: 70vh;
+      a{
+        height: 70vh;
+        .yellow-pattern{
+          height: 70vh;
+        }
+      }
+    }
+  }
+
+  // -------------- GABARIT SPECTACLE GENERAL --------------
+  main .content.spectacle{
+    .right-spectacle{
+      // padding: 0;
+    }
+
+    .lien-billeterie, .pdfs-wrapper{
+      display: inline-block;
+    }
+    .lien-billeterie{
+      margin-left: $marginBig;
+    }
+
+  }
+
+  // -------------- GABARIT ARTICLE GENERAL --------------
+  main .content.article{
+    padding: 0 $marginBig;
+    .left-col{
+      padding-right: $marginNormal;
+    }
+    .right-col{
+      padding-left: $marginNormal; 
+    }
+  }
+
+  footer{ 
+    padding: $marginNormal $marginBig;
+    .socialnetworks{
+      text-align: right;
+      margin-top: 0;
+      ul{
+        display: block;
+      }
     }
   }
 

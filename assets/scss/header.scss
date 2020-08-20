@@ -13,8 +13,9 @@ header{
 	&.row{margin:0;}
 	a{text-decoration:none;}
 	.logo{
-		width: 300px;
-		padding: 0 $marginBig;
+		padding: 0 $marginNormal;
+			width: 220px;
+		
 	}
 	.menu_btn{
 		display:block;
@@ -49,8 +50,9 @@ header{
 		font-weight: normal; 
 		letter-spacing: 0.06em;
 		position: fixed; 
-		right: 40px;
-		width: 400px;
+		right: $marginNormal;
+		width: 100%;
+		z-index: -1;
 	}
 	.main-nav{
 		margin-top: $marginSmall;
@@ -58,16 +60,16 @@ header{
 		padding:$marginNormal 40px;
 		position: absolute; 
 		background: $mainColor; 
-		top: 45px;
+		top: 33px;
 		right: -400px; 
 		transition: all 0.8s ease-in-out; 
 		&.active{
-			// top: 45px;
-			right: -40px;
+			right: -$marginSmall;
 		}
 		li{
 			list-style: none;
-			margin-bottom: $marginSmall;
+			margin-bottom: $marginNormal;
+			line-height: 1;
 			a{
 				color: $gris;
 				&:hover{
@@ -87,37 +89,26 @@ header{
 
 // -------------- DESKTOP HEADER --------------
 @media only screen and (min-width: 48em){
-	// header{
-	// 	.mobile-menu_logo, .desktop-menu_logo{
-	// 		padding: $marginSmall $marginBig;
-	// 	}
-		// .nav{ 
-		// 	height:auto; 
-		// 	min-height:auto;
-		// 	max-height: none;
-		// 	padding-left: $marginBig;
-		// }
-		// .main-nav_first-level{
-		// 	margin:0;
-		// 	display: flex;
-		// 	flex: 2;
-		// }
-		// .main-nav{
-		// 	margin-top:0;
-		// 	margin-bottom: 0;
-		// 	// padding: 5px 0 $marginSmall $marginSmall;
-		// 	li{
-		// 		text-align: center;
-		// 		justify-content: center;
-		// 		margin-bottom: 0;
-		// 		a::before{
-		// 			display:block;
-		// 			margin: 8px auto;
-		// 		}
-		// 	}
-		// }
-		// .desktop-menu{
-		// 	padding: 0;
-		// }
-	// }
+	header{
+		.logo{
+			padding: 0 $marginBig;
+			width: 300px;
+		}
+		.nav{
+			right: $marginBig;
+			width: 400px;
+		}
+		.main-nav{
+			top: 45px;
+			&.active{
+				right: -$marginBig;
+			}
+		}
+	}
+
 }
+
+
+
+
+

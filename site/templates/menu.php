@@ -7,9 +7,9 @@
 				<ul class="row">
 				<?php foreach ($page->children()->listed() as $child):?>
 					<?php if($cover = $child->cover()->toFile()):?>
-						<li class="col-md" style="background-image: linear-gradient(black, black), url(<?= $cover->url()?>)">
+						<li class="col-xs-12 col-sm" style="background-image: linear-gradient(black, black), url(<?= $cover->url()?>)">
 					<?php else:?>
-						<li class="col-md" style="background-color:#000">
+						<li class="col-xs-12 col-sm" style="background-color:#000">
 					<?php endif;?>
 						<a href="<?= $child->url()?>" title="<?= $child->title()?>" >
 							<?php if($coveryellow = $child->coveryellow()->toFile()):?> 

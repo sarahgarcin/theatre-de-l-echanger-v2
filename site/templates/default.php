@@ -4,7 +4,7 @@
 	<main>
 		<?php snippet('breadcrumb') ?>
 		<div class="content article row">
-			<div class="left-col col-xs-10 col-md-5">
+			<div class="left-col col-xs-12 col-sm-5">
 				<div class="photoswipe image-gallery" itemscope itemtype="http://schema.org/ImageGallery">
 					<div class="row">
 						<?php if($image = $page->imgleft()->toFile()):?>
@@ -41,7 +41,7 @@
 					<?= $page->infos()->kt()?>
 				</div>
 			</div>
-			<div class="right-col col-md-6">
+			<div class="right-col col-xs-12 col-sm-6">
 				<h1><?= $page->title()->html()?></h1>
 				<?= $page->text()->kt()?>
 			</div>

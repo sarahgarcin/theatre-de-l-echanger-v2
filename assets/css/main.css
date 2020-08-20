@@ -126,8 +126,8 @@ header {
   header a {
     text-decoration: none; }
   header .logo {
-    width: 300px;
-    padding: 0 40px; }
+    padding: 0 20px;
+    width: 220px; }
   header .menu_btn {
     display: block;
     position: relative;
@@ -172,30 +172,44 @@ header {
     font-weight: normal;
     letter-spacing: 0.06em;
     position: fixed;
-    right: 40px;
-    width: 400px; }
+    right: 20px;
+    width: 100%;
+    z-index: -1; }
   header .main-nav {
     margin-top: 10px;
     margin-bottom: 20px;
     padding: 20px 40px;
     position: absolute;
     background: #fff200;
-    top: 45px;
+    top: 33px;
     right: -400px;
     -webkit-transition: all 0.8s ease-in-out;
     -o-transition: all 0.8s ease-in-out;
     transition: all 0.8s ease-in-out; }
     header .main-nav.active {
-      right: -40px; }
+      right: -10px; }
     header .main-nav li {
       list-style: none;
-      margin-bottom: 10px; }
+      margin-bottom: 20px;
+      line-height: 1; }
       header .main-nav li a {
         color: #3F3F3F; }
         header .main-nav li a:hover {
           color: #000; }
       header .main-nav li.active a {
         color: #000; }
+
+@media only screen and (min-width: 48em) {
+  header .logo {
+    padding: 0 40px;
+    width: 300px; }
+  header .nav {
+    right: 40px;
+    width: 400px; }
+  header .main-nav {
+    top: 45px; }
+    header .main-nav.active {
+      right: -40px; } }
 
 .show-for-small-only {
   display: block; }
@@ -204,27 +218,31 @@ header {
   display: none; }
 
 main {
-  padding: 85px 0 0 0;
+  padding: 70px 0 0 0;
   font-size: 19px;
   width: 100%;
   margin: 0px auto; }
   main .content {
     position: relative;
-    padding: 0 40px; }
+    padding: 0; }
     main .content figure {
       margin: 20px 0; }
     main .content ol {
       padding-left: 40px; }
       main .content ol li {
         list-style: decimal; }
+    main .content .image-gallery figure {
+      margin: 10px 0; }
 
 .breadcrumb {
   width: 100%;
-  padding: 20px 40px 10px; }
+  padding: 20px 20px 10px; }
   .breadcrumb ol {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex; }
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
     .breadcrumb ol li {
       margin-left: 10px;
       font-size: 16px; }
@@ -278,18 +296,26 @@ main {
 
 footer {
   background: #fff200;
-  padding: 20px 40px;
+  padding: 20px 20px;
   font-family: "Avenir", sans-serif;
   letter-spacing: 0.02em; }
   footer p {
     margin: 0;
     font-size: 0.8em; }
   footer .socialnetworks {
-    text-align: right;
-    font-family: "Bebas", sans-serif; }
+    text-align: left;
+    font-family: "Bebas", sans-serif;
+    margin-top: 20px; }
+    footer .socialnetworks ul {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between; }
 
 .big-menu li {
-  height: 70vh;
+  height: 15vh;
   background-size: cover;
   background-repeat: no-repeat;
   background-blend-mode: saturation;
@@ -299,7 +325,7 @@ footer {
   position: relative;
   cursor: pointer; }
   .big-menu li a {
-    height: 70vh;
+    height: 15vh;
     display: block;
     background-color: rgba(255, 255, 255, 0.1);
     -webkit-transition: all 0.5s ease-in-out;
@@ -311,7 +337,7 @@ footer {
       position: absolute;
       top: -40px;
       left: 0;
-      height: 70vh;
+      height: 15vh;
       overflow: hidden; }
     .big-menu li a .big-menu-text {
       display: block;
@@ -349,10 +375,12 @@ main .content.spectacle {
     main .content.spectacle .hours p {
       background: #fff200;
       padding: 0 3px; }
+  main .content.spectacle .right-spectacle {
+    padding: 40px; }
   main .content.spectacle .lien-billeterie, main .content.spectacle .pdfs-wrapper {
-    display: inline-block; }
+    display: block; }
   main .content.spectacle .lien-billeterie {
-    margin-left: 40px; }
+    margin-left: 0; }
 
 main .content.programmation {
   padding: 0 40px; }
@@ -365,14 +393,11 @@ main .content.programmation {
     font-size: 30px; }
 
 main .content.article {
-  padding: 0 40px;
+  padding: 0 20px;
   margin-bottom: 80px; }
-  main .content.article .left-col {
-    padding-right: 20px; }
-    main .content.article .left-col > figure {
-      margin-top: 0; }
+  main .content.article .left-col > figure {
+    margin-top: 0; }
   main .content.article .right-col {
-    padding-left: 20px;
     border-left: 20px solid #fff200; }
     main .content.article .right-col ul {
       margin-left: 40px; }
@@ -393,5 +418,32 @@ main .content.article {
     display: none !important; }
   .hide-for-small-only {
     display: block !important; }
-  main .content {
-    padding: 0; } }
+  main {
+    padding: 85px 0 0 0; }
+    main .content {
+      padding: 0; }
+  .breadcrumb {
+    padding: 20px 40px 10px; }
+  .big-menu li {
+    height: 70vh; }
+    .big-menu li a {
+      height: 70vh; }
+      .big-menu li a .yellow-pattern {
+        height: 70vh; }
+  main .content.spectacle .lien-billeterie, main .content.spectacle .pdfs-wrapper {
+    display: inline-block; }
+  main .content.spectacle .lien-billeterie {
+    margin-left: 40px; }
+  main .content.article {
+    padding: 0 40px; }
+    main .content.article .left-col {
+      padding-right: 20px; }
+    main .content.article .right-col {
+      padding-left: 20px; }
+  footer {
+    padding: 20px 40px; }
+    footer .socialnetworks {
+      text-align: right;
+      margin-top: 0; }
+      footer .socialnetworks ul {
+        display: block; } }
