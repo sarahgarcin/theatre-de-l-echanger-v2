@@ -9,7 +9,7 @@ Kirby Configuration For Localhost
 
 return [
   'environment' => 'local',
-  'debug'  => false,
+  'debug'  => true,
   'smartypants' => [
     'doublequote.open'           => '«&#8239;',
     'doublequote.close'          => '&#8239;»',

@@ -106,6 +106,9 @@ strong {
   font-weight: normal;
   background: #fff200; }
 
+.clair {
+  color: rgba(0, 0, 0, 0.55); }
+
 header {
   width: 100%;
   max-width: 100%;
@@ -125,6 +128,74 @@ header {
   header .logo {
     width: 300px;
     padding: 0 40px; }
+  header .menu_btn {
+    display: block;
+    position: relative;
+    margin: 0px;
+    cursor: pointer;
+    height: 24px;
+    width: 35px; }
+    header .menu_btn:hover span {
+      background: #000; }
+    header .menu_btn span {
+      display: block;
+      background: #3F3F3F;
+      height: 3px;
+      width: 35px;
+      position: absolute;
+      -webkit-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      transition: all 0.5s ease; }
+    header .menu_btn span:nth-child(1) {
+      top: 0px; }
+    header .menu_btn span:nth-child(2) {
+      top: 10px; }
+    header .menu_btn span:nth-child(3) {
+      top: 20px; }
+    header .menu_btn .transparent {
+      opacity: 0; }
+    header .menu_btn .rotate-top {
+      -webkit-transform: rotatez(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotatez(45deg);
+      -webkit-transform-origin: 0%;
+      left: 2px; }
+    header .menu_btn .rotate-bottom {
+      -webkit-transform: rotatez(-45deg);
+      -ms-transform: rotate(-45deg);
+      transform: rotatez(-45deg);
+      -webkit-transform-origin: 15%; }
+  header .nav {
+    margin: 0;
+    font-size: 30px;
+    font-family: "Bebas", sans-serif;
+    font-weight: normal;
+    letter-spacing: 0.06em;
+    position: fixed;
+    right: 40px;
+    width: 400px; }
+  header .main-nav {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 20px 40px;
+    position: absolute;
+    background: #fff200;
+    top: 45px;
+    right: -400px;
+    -webkit-transition: all 0.8s ease-in-out;
+    -o-transition: all 0.8s ease-in-out;
+    transition: all 0.8s ease-in-out; }
+    header .main-nav.active {
+      right: -40px; }
+    header .main-nav li {
+      list-style: none;
+      margin-bottom: 10px; }
+      header .main-nav li a {
+        color: #3F3F3F; }
+        header .main-nav li a:hover {
+          color: #000; }
+      header .main-nav li.active a {
+        color: #000; }
 
 .show-for-small-only {
   display: block; }
@@ -136,8 +207,7 @@ main {
   padding: 85px 0 0 0;
   font-size: 19px;
   width: 100%;
-  margin: 0px auto;
-  min-height: 83vh; }
+  margin: 0px auto; }
   main .content {
     position: relative;
     padding: 0 40px; }
@@ -147,6 +217,27 @@ main {
       padding-left: 40px; }
       main .content ol li {
         list-style: decimal; }
+
+.breadcrumb {
+  width: 100%;
+  padding: 20px 40px 10px; }
+  .breadcrumb ol {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+    .breadcrumb ol li {
+      margin-left: 10px;
+      font-size: 16px; }
+      .breadcrumb ol li:before {
+        content: '>>';
+        margin-right: 10px; }
+      .breadcrumb ol li:first-child {
+        margin-left: 0; }
+        .breadcrumb ol li:first-child:before {
+          content: '';
+          margin-right: 0; }
+      .breadcrumb ol li a:hover {
+        background: #fff200; }
 
 .prog-list-wrapper {
   padding: 0 40px; }
@@ -188,24 +279,27 @@ main {
 footer {
   background: #fff200;
   padding: 20px 40px;
-  font-family: "Bebas", sans-serif;
+  font-family: "Avenir", sans-serif;
   letter-spacing: 0.02em; }
   footer p {
-    margin: 0; }
+    margin: 0;
+    font-size: 0.8em; }
   footer .socialnetworks {
-    text-align: right; }
+    text-align: right;
+    font-family: "Bebas", sans-serif; }
 
 .big-menu li {
-  height: 83vh;
+  height: 70vh;
   background-size: cover;
   background-repeat: no-repeat;
   background-blend-mode: saturation;
   background-position: center;
   border-left: 1px solid #3F3F3F;
   padding: 0;
-  position: relative; }
+  position: relative;
+  cursor: pointer; }
   .big-menu li a {
-    height: 83vh;
+    height: 70vh;
     display: block;
     background-color: rgba(255, 255, 255, 0.1);
     -webkit-transition: all 0.5s ease-in-out;
@@ -213,10 +307,11 @@ footer {
     transition: all 0.5s ease-in-out; }
     .big-menu li a .yellow-pattern {
       width: 100%;
+      mix-blend-mode: multiply;
       position: absolute;
       top: -40px;
       left: 0;
-      height: 83vh;
+      height: 70vh;
       overflow: hidden; }
     .big-menu li a .big-menu-text {
       display: block;
@@ -247,6 +342,13 @@ footer {
 
 main .content.spectacle {
   padding: 40px 0; }
+  main .content.spectacle h2 {
+    font-size: 45px; }
+  main .content.spectacle .hours {
+    display: inline-block; }
+    main .content.spectacle .hours p {
+      background: #fff200;
+      padding: 0 3px; }
   main .content.spectacle .lien-billeterie, main .content.spectacle .pdfs-wrapper {
     display: inline-block; }
   main .content.spectacle .lien-billeterie {
@@ -254,16 +356,37 @@ main .content.spectacle {
 
 main .content.programmation {
   padding: 0 40px; }
+  main .content.programmation h1 {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 0; }
   main .content.programmation h2 {
     font-size: 30px; }
 
 main .content.article {
-  padding: 40px 40px; }
-  main .content.article .right-col ul {
-    margin-left: 40px; }
-    main .content.article .right-col ul li {
-      list-style: disc;
-      margin-bottom: 10px; }
+  padding: 0 40px;
+  margin-bottom: 80px; }
+  main .content.article .left-col {
+    padding-right: 20px; }
+    main .content.article .left-col > figure {
+      margin-top: 0; }
+  main .content.article .right-col {
+    padding-left: 20px;
+    border-left: 20px solid #fff200; }
+    main .content.article .right-col ul {
+      margin-left: 40px; }
+      main .content.article .right-col ul li {
+        list-style: disc;
+        margin-bottom: 10px; }
+  main .content.article h2 {
+    font-family: "Bebas", sans-serif;
+    font-weight: normal;
+    font-size: 30px;
+    margin-bottom: 0;
+    margin-top: 40px; }
+  main .content.article h2 + p {
+    margin-top: 10px; }
 
 @media only screen and (min-width: 48em) {
   .show-for-small-only {

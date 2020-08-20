@@ -3,6 +3,7 @@
 
 	<main>
 		<div class="content prog-list-wrapper programmation row">
+			<h1><?= $page->title()?></h1>
 			<ul class='row'>
 					<?php foreach($page->children()->listed() as $child):?>
 						<li class="col-xs-12 col-sm-6 col-md-3">

@@ -110,6 +110,10 @@
     background: $mainColor;
   }
 
+  .clair{
+    color: rgba(0,0,0, 0.55);
+  }
+
 
   // -------------- IMPORT TEMPlATES STYLES --------------
   @import "header.scss";
@@ -130,7 +134,7 @@
     font-size: $textSize;
     width: 100%;
     margin:0px auto;
-    min-height: 83vh;
+    // min-height: 83vh;
     .content{
       position: relative;
       padding: 0 $marginBig;
@@ -145,6 +149,32 @@
       }
     }
   } 
+
+  .breadcrumb{
+    width: 100%;
+    padding: $marginNormal $marginBig $marginSmall; 
+    ol{
+      display: flex; 
+      li{
+        margin-left: $marginSmall;
+        font-size: $menuSize; 
+        &:before{
+          content: '>>';
+          margin-right: $marginSmall;
+        }
+        &:first-child{
+          margin-left: 0;
+          &:before{
+            content: '';
+            margin-right: 0;
+          } 
+        }
+        a:hover{
+          background: $mainColor;
+        }
+      }
+    }
+  }
 
   .prog-list-wrapper{
     padding: 0 $marginBig;
@@ -194,20 +224,23 @@
   footer{
     background: $mainColor; 
     padding: $marginNormal $marginBig;
-    font-family: $subtitleFont;
-    letter-spacing: 0.02em; 
+    font-family: $font;
+    letter-spacing: 0.02em;
+
     p{
       margin:0;
+      font-size: $smallText;
     }
     .socialnetworks{
       text-align: right;
+      font-family: $subtitleFont;
     }
   }
 
 // -------------- GABARIT MENU GENERAL --------------
 .big-menu{
   li{
-    height: 83vh;
+    height: 70vh;
     background-size: cover;
     background-repeat: no-repeat;
     background-blend-mode: saturation;
@@ -215,9 +248,10 @@
     border-left: 1px solid $gris;
     padding:0;
     position: relative;
+    cursor: pointer; 
     // filter: grayscale(1);
     a{
-      height: 83vh;
+      height: 70vh;
       display:block;
       background-color: rgba(255, 255, 255, 0.1);
       // background-color: yellow; 
@@ -226,11 +260,11 @@
       transition: all 0.5s ease-in-out;
       .yellow-pattern{
         width: 100%;
-        // mix-blend-mode: multiply; 
+        mix-blend-mode: multiply; 
         position: absolute; 
         top:-40px; 
         left:0;
-        height: 83vh;
+        height: 70vh;
         overflow: hidden;
       }
       .big-menu-text{
@@ -269,6 +303,16 @@
 // -------------- GABARIT SPECTACLE GENERAL --------------
 main .content.spectacle{
   padding: $marginBig 0;
+  h2{
+    font-size: 45px;
+  }
+  .hours{
+    display:inline-block;
+    p{
+      background: $mainColor;
+      padding: 0 3px;
+    }
+  }
   .lien-billeterie, .pdfs-wrapper{
     display: inline-block;
   }
@@ -283,6 +327,12 @@ main .content.spectacle{
 
 main .content.programmation{
   padding: 0 $marginBig;
+  h1 {
+    width: 100%;
+    text-align: center; 
+    margin-top: $marginNormal;
+    margin-bottom: 0;
+  }
   h2{
     font-size: 30px;
   }
@@ -291,8 +341,17 @@ main .content.programmation{
 // -------------- GABARIT ARTICLE GENERAL --------------
 
 main .content.article{
-  padding: $marginBig $marginBig;
+  padding: 0 $marginBig;
+  margin-bottom: $marginBig*2;
+  .left-col{
+    padding-right: $marginNormal;
+    & > figure{
+      margin-top: 0;
+    }
+  }
   .right-col{
+    padding-left: $marginNormal; 
+    border-left: 20px solid $mainColor;
     ul{
       margin-left: $marginBig;
       li{
@@ -300,6 +359,17 @@ main .content.article{
         margin-bottom: $marginSmall;
       }
     }
+  }
+  // h1{margin-top:0;}
+  h2{
+    font-family: $subtitleFont;
+    font-weight: normal;
+    font-size: 30px; 
+    margin-bottom: 0;
+    margin-top: $marginBig;
+  }
+  h2+p{
+    margin-top: $marginSmall;
   }
 }
 

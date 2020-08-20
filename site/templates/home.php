@@ -13,11 +13,11 @@
 						?>
 						<li class="col-md" style="background-image: linear-gradient(black, black), url(<?= $cover->url()?>)">
 							<a href="<?= $actu->url()?>" title="<?= $actu->title()?>">
-								<!-- <?php if($coveryellow = $actu->coveryellow()->toFile()):?> 
+								<?php if($coveryellow = $actu->coveryellow()->toFile()):?> 
 									<div class="yellow-pattern">
 										<img src="<?= $coveryellow->url()?>" alt="">
 									</div>
-								<?php endif;?> -->
+								<?php endif;?>
 								<div class="big-menu-text">
 									<?= $child->title()?>
 									<div class="infos-spectacle">
@@ -32,8 +32,7 @@
 						</li>
 					<?php else:?>
 						<?php if($cover = $child->cover()->toFile()):?>
-					<!-- 		<li class="col-md" style="background-image: linear-gradient(black, black), url(<?= $cover->url()?>)"> -->
-								<li class="col-md" style="background-color:#3F3F3F">
+							<li class="col-md" style="background-image: linear-gradient(black, black), url(<?= $cover->url()?>)">
 						<?php else:?>
 							<li class="col-md" style="background-color:#000">
 						<?php endif;?>

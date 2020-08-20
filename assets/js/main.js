@@ -4,13 +4,28 @@ $(document).ready(function(){
 
 
 function init(){
-	var contentH = $('.content').outerHeight();
-	var coverH = contentH + 180; 
-	$('.cover-wrapper').css('height', coverH + "px");
-	$(window).resize(function(event) {
-		var contentH = $('.content').outerHeight();
-		var coverH = contentH + 180; 
-		$('.cover-wrapper').css('height', coverH + "px");
+
+	// -------------- OPEN MENU --------------- //
+	var menuBtn = $('.menu_btn');
+	var nav = $('.main-nav');
+	var barBurger1 = $('span:nth-child(1)');
+	var barBurger2 = $('span:nth-child(2)');
+	var barBurger3 = $('span:nth-child(3)');
+
+	$('.menu_btn').on("click", function(e){
+	  if(nav.hasClass('active')){
+	    nav.removeClass("active");
+	    barBurger1.removeClass("rotate-top");
+	    barBurger2.removeClass("transparent");
+	    barBurger3.removeClass("rotate-bottom");
+	  }
+	  else{
+	  	nav.addClass("active");
+	    barBurger1.addClass("rotate-top");
+	    barBurger2.addClass("transparent");
+	    barBurger3.addClass("rotate-bottom");
+	  }
+
 	});
 }
 

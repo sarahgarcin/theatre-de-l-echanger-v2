@@ -22,13 +22,13 @@
   <!-- scripts -->
   <?php
 
-    // if ( option('environment') == 'local' ) :
+    if ( option('environment') == 'local' ) :
       foreach ( option('julien-gargot.assets.scripts', array()) as $style):
         echo js($style.'?version='.md5(uniqid(rand(), true)));
       endforeach;
-    // else:
+    else:
       echo js('assets/production/all.min.js');
-    // endif
+    endif
   ?>
 
 </body>
