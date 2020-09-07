@@ -13,24 +13,24 @@ ob_start();
 
     @font-face {
 		    font-family: 'LMDLD';
-		    src: url('https://lechangeur.org/assets/fonts/LMDLD.woff2') format('woff2'),
-		        url('/assets/fonts/LMDLD.woff') format('woff');
+		    src: url('/theatre-lechangeur/v2/assets/fonts/LMDLD.woff2') format('woff2'),
+		        url('/theatre-lechangeur/v2/assets/fonts/LMDLD.woff') format('woff');
 		    font-weight: normal;
 		    font-style: normal;
 		}
 
 		@font-face {
 		    font-family: 'Bebas';
-		    src: url('https://lechangeur.org/assets/fonts/BebasNeue.woff2') format('woff2'),
-		        url('/assets/fonts/BebasNeue.woff') format('woff');
+		    src: url('/theatre-lechangeur/v2/assets/fonts/BebasNeue.woff2') format('woff2'),
+		        url('/theatre-lechangeur/v2/assets/fonts/BebasNeue.woff') format('woff');
 		    font-weight: normal;
 		    font-style: normal;
 		}
 
 		@font-face {
 		    font-family: 'Avenir';
-		    src: url('https://lechangeur.org/assets/fonts/AvenirNextLTPro-Cn.woff2') format('woff2'),
-		        url('/assets/fonts/AvenirNextLTPro-Cn.woff') format('woff');
+		    src: url('/theatre-lechangeur/v2/assets/fonts/AvenirNextLTPro-Cn.woff2') format('woff2'),
+		        url('/theatre-lechangeur/v2/assets/fonts/AvenirNextLTPro-Cn.woff') format('woff');
 		    font-weight: normal;
 		    font-style: normal;
 		}
