@@ -4,8 +4,8 @@ pages: false
 
 fields:
   actu: 
-    label: Sélectionnez le spectacle du moment
-    type: select
+    label: Sélectionnez le(s) spectacle(s) du moment
+    type: multiselect
     options: query
     query: site.index.template("spectacle")
 

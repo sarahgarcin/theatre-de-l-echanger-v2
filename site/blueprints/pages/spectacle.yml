@@ -3,6 +3,10 @@ preset: page
 pages: false
 
 fields:
+  pageImages:
+    label: Images de couverture
+    type: headline
+    numbered: false
   cover: 
     label: Image de couverture
     type: files
@@ -15,8 +19,15 @@ fields:
     label: Filtre jaune de couverture pour le menu
     type: files
     mode: single
+  pageText:
+    label: Texte / infos sur le spectacle
+    type: headline
+    numbered: false
   genre: 
     label: Genre
+    type: text
+  compagnie: 
+    label: Nom de la compagnie
     type: text
   distribution: 
     label: Distribution
@@ -46,5 +57,16 @@ fields:
   billeterie:
     label: Lien billeterie
     type: url
+  pageRelated:
+    label: Pages liées
+    type: headline
+    numbered: false
+  relatedtitle: 
+    label: Titre du champ pages liées 
+    type: text
+  related:
+    label: Pages liées
+    type: pages
+    query: page.siblings(false)
 
 

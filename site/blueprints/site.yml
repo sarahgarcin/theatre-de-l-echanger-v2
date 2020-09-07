@@ -43,6 +43,10 @@ tabs:
               text: 
                 label: Texte
                 type: text
+              icon: 
+                label: Icône
+                type: text
+                help: Pour trouver le code corresondant à l'icône aller sur https://fontawesome.com/icons/
           author: 
             label: Auteur
             type: text

@@ -1,0 +1,6 @@
+title: Newsletters
+preset: pages
+pages: true
+templates: 
+  - newsletter
+

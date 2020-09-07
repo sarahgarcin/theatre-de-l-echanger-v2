@@ -25,7 +25,7 @@
   ul, ol{margin:0; padding:0;}
   li{list-style:none;}
   a{color: $gris;text-decoration: none;}
-  a:visited{color: #000;}
+  a:visited{color: $gris;}
   a:hover{color: #000;}
   img {width: 100%;}
   figure{margin:0;}
@@ -111,7 +111,11 @@
   }
 
   .clair{
-    color: rgba(0,0,0, 0.55);
+    color: $lightgray;
+  }
+
+  .bebas{
+    font-family: $subtitleFont;
   }
 
 
@@ -209,6 +213,11 @@
       letter-spacing: 0.02em; 
       margin-bottom: $marginSmall;
     }
+
+     h4.compagnie{
+      color: $lightgray;
+     }
+
     .lien-billeterie, .pdfs-wrapper > li{
       margin-top: 15px;
       border-left: 4px solid $mainColor;
@@ -231,18 +240,31 @@
     padding: $marginNormal $marginNormal;
     font-family: $font;
     letter-spacing: 0.02em;
-
+    h1{
+      font-size: $textSize;
+      margin:0;
+      color: #000;
+    }
     p{
       margin:0;
       font-size: $smallText;
+
     }
     .socialnetworks{
       text-align: left;
       font-family: $subtitleFont;
       margin-top: $marginNormal;
+      font-size: 25px;
       ul{
         display: flex;
         justify-content: space-between;
+        li a{
+           color: $gris;
+           transition: all 0.5s ease-in-out;
+           &:hover{
+            color: #000;
+           }
+        }
       } 
     }
   }
@@ -280,6 +302,7 @@
         font-family: $subtitleFont;
         font-size: 2em; 
         text-shadow: 0px 0px 4px #333;
+        padding: 0 $marginNormal;
         .infos-spectacle{
           // background-color: #FFF;
           // color: $gris;
@@ -330,6 +353,20 @@ main .content.spectacle{
     margin-left: 0;
   }
 
+  .related{
+    margin-top: $marginBig;
+    padding-top: $marginNormal;
+    border-top: 4px solid $mainColor;
+    h3{
+     font-size: 25px;
+    }
+    h4{
+      font-family: $titleFont;
+      text-align: center;
+      margin:0;
+    }
+  }
+
 }
 
 
@@ -353,6 +390,15 @@ main .content.programmation{
 main .content.article{
   padding: 0 $marginNormal;
   margin-bottom: $marginBig*2;
+  h3{
+    // background: $mainColor;
+    margin-top: $marginBig;
+    // padding-left: 3px;
+    font-family: $titleFont;
+  }
+  h3+p{
+    margin-top:0;
+  }
   .left-col{
     & > figure{
       margin-top: 0;
@@ -452,7 +498,10 @@ main .content.article{
       text-align: right;
       margin-top: 0;
       ul{
-        display: block;
+         justify-content: flex-end;
+        li{
+          margin-left: $marginSmall;
+        }
       }
     }
   }

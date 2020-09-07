@@ -30,7 +30,7 @@ a {
   text-decoration: none; }
 
 a:visited {
-  color: #000; }
+  color: #3F3F3F; }
 
 a:hover {
   color: #000; }
@@ -109,6 +109,9 @@ strong {
 .clair {
   color: rgba(0, 0, 0, 0.55); }
 
+.bebas {
+  font-family: "Bebas", sans-serif; }
+
 header {
   width: 100%;
   max-width: 100%;
@@ -128,6 +131,19 @@ header {
   header .logo {
     padding: 0 20px;
     width: 220px; }
+  header .now-frame {
+    border-left: 5px solid #3F3F3F;
+    padding: 0px 10px; }
+    header .now-frame h2 {
+      font-size: 19px;
+      font-family: "Bebas", sans-serif;
+      margin: 0; }
+    header .now-frame ul {
+      margin: 0; }
+      header .now-frame ul li {
+        display: inline-block; }
+        header .now-frame ul li:after {
+          content: "///"; }
   header .menu_btn {
     display: block;
     position: relative;
@@ -137,6 +153,8 @@ header {
     width: 35px; }
     header .menu_btn:hover span {
       background: #000; }
+    header .menu_btn:hover span.menu_text {
+      color: #000; }
     header .menu_btn span {
       display: block;
       background: #3F3F3F;
@@ -165,6 +183,13 @@ header {
       -ms-transform: rotate(-45deg);
       transform: rotatez(-45deg);
       -webkit-transform-origin: 15%; }
+    header .menu_btn span.menu_text {
+      height: auto;
+      width: auto;
+      font-size: 18px;
+      background: transparent;
+      top: 25px;
+      color: #3F3F3F; }
   header .nav {
     margin: 0;
     font-size: 30px;
@@ -173,6 +198,7 @@ header {
     letter-spacing: 0.06em;
     position: fixed;
     right: 20px;
+    top: 23px;
     width: 100%;
     z-index: -1; }
   header .main-nav {
@@ -182,7 +208,7 @@ header {
     position: absolute;
     background: #fff200;
     top: 33px;
-    right: -400px;
+    right: -440px;
     -webkit-transition: all 0.8s ease-in-out;
     -o-transition: all 0.8s ease-in-out;
     transition: all 0.8s ease-in-out; }
@@ -277,6 +303,8 @@ main {
     font-family: "Bebas", sans-serif;
     letter-spacing: 0.02em;
     margin-bottom: 10px; }
+  .prog-list-wrapper h4.compagnie {
+    color: rgba(0, 0, 0, 0.55); }
   .prog-list-wrapper .lien-billeterie, .prog-list-wrapper .pdfs-wrapper > li {
     margin-top: 15px;
     border-left: 4px solid #fff200;
@@ -299,13 +327,18 @@ footer {
   padding: 20px 20px;
   font-family: "Avenir", sans-serif;
   letter-spacing: 0.02em; }
+  footer h1 {
+    font-size: 19px;
+    margin: 0;
+    color: #000; }
   footer p {
     margin: 0;
     font-size: 0.8em; }
   footer .socialnetworks {
     text-align: left;
     font-family: "Bebas", sans-serif;
-    margin-top: 20px; }
+    margin-top: 20px;
+    font-size: 25px; }
     footer .socialnetworks ul {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -313,6 +346,13 @@ footer {
       -webkit-box-pack: justify;
       -ms-flex-pack: justify;
       justify-content: space-between; }
+      footer .socialnetworks ul li a {
+        color: #3F3F3F;
+        -webkit-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out; }
+        footer .socialnetworks ul li a:hover {
+          color: #000; }
 
 .big-menu li {
   height: 15vh;
@@ -350,7 +390,8 @@ footer {
       text-align: center;
       font-family: "Bebas", sans-serif;
       font-size: 2em;
-      text-shadow: 0px 0px 4px #333; }
+      text-shadow: 0px 0px 4px #333;
+      padding: 0 20px; }
       .big-menu li a .big-menu-text .infos-spectacle {
         width: 60%;
         margin: auto;
@@ -381,6 +422,16 @@ main .content.spectacle {
     display: block; }
   main .content.spectacle .lien-billeterie {
     margin-left: 0; }
+  main .content.spectacle .related {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 4px solid #fff200; }
+    main .content.spectacle .related h3 {
+      font-size: 25px; }
+    main .content.spectacle .related h4 {
+      font-family: "LMDLD", sans-serif;
+      text-align: center;
+      margin: 0; }
 
 main .content.programmation {
   padding: 0 40px; }
@@ -395,6 +446,11 @@ main .content.programmation {
 main .content.article {
   padding: 0 20px;
   margin-bottom: 80px; }
+  main .content.article h3 {
+    margin-top: 40px;
+    font-family: "LMDLD", sans-serif; }
+  main .content.article h3 + p {
+    margin-top: 0; }
   main .content.article .left-col > figure {
     margin-top: 0; }
   main .content.article .right-col {
@@ -446,4 +502,8 @@ main .content.article {
       text-align: right;
       margin-top: 0; }
       footer .socialnetworks ul {
-        display: block; } }
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+        justify-content: flex-end; }
+        footer .socialnetworks ul li {
+          margin-left: 10px; } }

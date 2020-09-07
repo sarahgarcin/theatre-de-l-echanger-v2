@@ -11,6 +11,7 @@
 
   <title><?php echo $site->title()->html() ?> | <?php echo $page->title()->html() ?></title>
   <?php echo css('assets/css/flexboxgrid.min.css') ?>
+  <?php echo css('assets/css/fontawesome.min.css') ?>
   <?php
     if ( option('environment') == 'local' ) :
       foreach ( option('julien-gargot.assets.styles', array()) as $style):

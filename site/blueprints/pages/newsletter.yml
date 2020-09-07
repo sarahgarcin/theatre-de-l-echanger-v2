@@ -1,0 +1,50 @@
+title: Newsletter
+preset: page
+pages: false
+
+fields:
+  mybuilder:
+    label: Construire la newsletter
+    type: builder
+    columns: 1 # Optional. If set to 2 or more, the builder blocks will be placed in a grid.
+    fieldsets:
+      bodytext:
+        name: Texte
+        label: Texte courant — {{title}}
+        preview:
+          snippet: blocks/bodytext
+        defaultView: preview 
+        fields:
+          title: 
+            label: Titre de la section (facultatif)
+            type: text
+          text:
+            label: Texte
+            type: textarea
+      textimage:
+        name: Texte / Image 
+        label: Texte / Image 
+        preview:
+          snippet: blocks/textimage
+        defaultView: preview 
+        fields:
+          text:
+            label: Texte
+            type: textarea
+          link: 
+            label: Liens vers la page web correspondante (facultatif)
+            type: url
+          cover: 
+            label: Image 
+            type: files
+            query: page.images
+          layout: 
+            label: Mise en forme
+            type: radio
+            width: 1/2
+            options: 
+              textleft: Texte à gauche / Image à droite
+              textright: Texte à droite / Image à gauche
+
+
+

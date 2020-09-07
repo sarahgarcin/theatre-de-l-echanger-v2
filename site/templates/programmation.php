@@ -20,6 +20,7 @@
 								<div class="prog-infos-wrapper">
 									<h4><?= $child->genre()->html()?></h4>
 									<h2><?= $child->title()->html()?></h2>
+									<h4 class="compagnie"><?= $child->compagnie()->html()?></h4>
 									<h3>
 										<?= $child->dates()->kt()?>
 										<span class="hours"><?= $child->hours()->kt()?></span>

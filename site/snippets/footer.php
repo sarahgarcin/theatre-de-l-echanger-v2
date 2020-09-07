@@ -8,7 +8,7 @@
         <?php foreach($site->social()->toStructure() as $social):?>
           <li>
             <a href="<?=$social->url()?>" title="<?=$social->text()?>" target="_blank">
-              <?=$social->text()?>
+              <i class="fab <?= $social->icon() ?>"></i>
             </a>
           </li>
 

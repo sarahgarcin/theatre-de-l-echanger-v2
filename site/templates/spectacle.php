@@ -17,6 +17,7 @@
 			<div class="right-spectacle col-xs-12 col-sm-6">
 				<h4><?= $page->genre()->html()?></h4>
 				<h2><?= $page->title()->html()?></h2>
+				<h4 class="compagnie"><?= $page->compagnie()->html()?></h4>
 				<h3>
 					<?= $page->dates()->html()?><br>
 					<span class="hours"><?= $page->hours()->kt()?></span>
@@ -47,6 +48,33 @@
 				</div>
 				<div class="credits-text">
 					<?= $page->credits()->kt()?>
+				</div>
+				<div class="related">
+					<?php if($page->relatedtitle()->isNotEmpty()):?>
+						<h3><?= $page->relatedtitle()->html()?></h3>
+					<?php endif;?>
+					<?php 
+						$related = $page->related()->toPages();
+						if ($related->count() > 0):?>
+						<ul class="row">
+					    <?php foreach($related as $article): ?>
+					    <li class="col-xs-6 col-sm-4">
+					      <a href="<?= $article->url() ?>">
+						    	<?php if($image = $article->cover()->toFile()):?>
+										<div class="prog-cover-wrapper">
+											<?= $image->thumb([
+									      'width'   => 300,
+									      'height'  => 300,
+									      'quality' => 80
+									    ])->html();?>
+										</div>
+									<?php endif;?>
+					      <h4><?= $article->title() ?></h4>
+					      </a>
+					    </li>
+					    <?php endforeach ?>
+					  </ul>
+						<?php endif;?>
 				</div>
 				
 			</div>
