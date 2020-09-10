@@ -16,16 +16,26 @@
 
 @font-face {
     font-family: 'Avenir';
-    src: url('AvenirNextLTPro-Cn.woff2') format('woff2'),
-        url('AvenirNextLTPro-Cn.woff') format('woff');
-    font-weight: normal;
+    src: url('AvenirNextCondensed-Bold.woff2') format('woff2'),
+        url('AvenirNextCondensed-Bold.woff') format('woff');
+    font-weight: bold;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Avenir';
-    src: url('AvenirNextLTPro-It.woff2') format('woff2'),
-        url('AvenirNextLTPro-It.woff') format('woff');
+    src: url('AvenirNextCondensed-BoldItalic.woff2') format('woff2'),
+        url('AvenirNextCondensed-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('AvenirNextCondensed-Italic.woff2') format('woff2'),
+        url('AvenirNextCondensed-Italic.woff') format('woff');
     font-weight: normal;
     font-style: italic;
     font-display: swap;
@@ -33,12 +43,14 @@
 
 @font-face {
     font-family: 'Avenir';
-    src: url('AvenirNextLTPro-Bold.woff2') format('woff2'),
-        url('AvenirNextLTPro-Bold.woff') format('woff');
-    font-weight: bold;
+    src: url('AvenirNextCondensed-Regular.woff2') format('woff2'),
+        url('AvenirNextCondensed-Regular.woff') format('woff');
+    font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
+
+
 
 @font-face {
     font-family: 'Font Awesome 5 Brands';

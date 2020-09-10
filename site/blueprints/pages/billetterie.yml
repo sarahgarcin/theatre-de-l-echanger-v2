@@ -1,4 +1,4 @@
-title: Article
+title: Billetterie
 
 columns:
   left:
@@ -28,34 +28,40 @@ columns:
             multiple: false
             width: 1/2
             help: Choisir une image png avec les motifs jaune
-  center: 
+
+  center:
     width: 2/4
-    sections: 
-      content: 
+    sections:
+      content:
         type: fields
         fields:
           contentSettings:
-            label: Contenu de la page
+            label: Contenu à afficher dans la page
             type: headline
-          imgleft: 
-            label: Image colonne de gauche
-            type: files
-            multiple: false
-          imageslist: 
-            label: Images
-            type: files
-            help: Images à afficher sous forme de diaporama dans la colonne de gauche
-          infos: 
-            label: Texte synthétique
-            type: markdown
-            size: small
-            help: S'affiche dans la colonne de gauche
-          text:
-            label: Texte
-            type: markdown
-            size: medium
-            help: S'affiche dans la colonne de droite
-          
+          residence: 
+            label: Sélectionnez les évènements de résidences 
+            type: pages
+            query: site.index.children.findBy('uid', 'residences')
+            multiple: true
+          actions: 
+            label: Sélectionnez les évènements d'actions artistiques 
+            type: pages
+            query: site.index.children.findBy('uid', 'actions-artistiques')
+            multiple: true
+      drafts:
+        headline: Brouillons
+        type: pages
+        status: draft
+        templates: 
+          - spectacle
+        help: Cette section permet d'ajouter des nouvelles pages non présentes dans le site comme la page du pass illimité
+      published:
+        headline: Pages Publiées
+        type: pages
+        status: listed
+        templates: 
+          - spectacle
+        help: Rendre visible les pages précédemment créées
   right:
     width: 1/4
     sticky: true
@@ -63,4 +69,6 @@ columns:
       files:
         headline: Fichiers
         type: files
+
+
 

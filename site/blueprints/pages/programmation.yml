@@ -2,7 +2,34 @@ title: Programmation
 
 columns:
   left:
-    width: 2/3
+    width: 1/4
+    sections:
+      menu:
+        type: fields
+        fields:
+          pageImages:
+            label: Paramètres d'affichage dans le menu
+            type: headline
+          cover: 
+            label: Menu - Image de couverture
+            type: files
+            mode: single
+          covercolor:
+            label: Menu - Couleur de fond
+            type: radio 
+            options: 
+              black: Noir
+              gray: Gris
+              lightgray: Gris clair 
+            help: Choisir soit une photo de couverture soit une couleur de fond
+          coveryellow: 
+            label: Menu - Filtre jaune
+            type: files
+            multiple: false
+            width: 1/2
+            help: Choisir une image png avec les motifs jaune
+  center:
+    width: 2/4
     sections:
       drafts:
         headline: Brouillons
@@ -26,32 +53,11 @@ columns:
           - spectacle
           - programmation
   right:
-    width: 1/3
+    width: 1/4
     sections:
       images:
-        headline: Images
+        headline: Fichiers
         type: files
-        template: list
-      content:
-        type: fields
-        fields:
-          cover:
-            label: Photo de couverture
-            type: files
-          covercolor:
-            label: Couleur de fond
-            type: radio 
-            options: 
-              black: Noir
-              gray: Gris
-              lightgray: Gris clair 
-            help: Choisir soit une photo de couverture soit une couleur de fond
-          coveryellow: 
-            label: Filtre jaune de couverture
-            type: files
-            mode: single
-            width: 1/2
-            help: Choisir une image png avec les motifs jaune
 
 
 

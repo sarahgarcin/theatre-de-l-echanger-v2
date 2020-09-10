@@ -1,82 +1,111 @@
 title: Spectacle
-preset: page
-pages: false
 
-fields:
-  pageImages:
-    label: Images de couverture
-    type: headline
-    numbered: false
-  cover: 
-    label: Image de couverture
-    type: files
-    mode: single
-  covermenu: 
-    label: Image de couverture pour le menu
-    type: files
-    mode: single
-  coveryellow: 
-    label: Filtre jaune de couverture pour le menu
-    type: files
-    mode: single
-  pageText:
-    label: Texte / infos sur le spectacle
-    type: headline
-    numbered: false
-  genre: 
-    label: Genre
-    type: text
-  compagnie: 
-    label: Nom de la compagnie
-    type: text
-  distribution: 
-    label: Distribution
-    type: textarea
-  datesFormatted: 
-    label: Dates formatées
-    type: structure
-    fields:
-      start: 
-        label: Date de début
-        type: date
-      end: 
-        label: Date de fin 
-        type: date 
-  dates: 
-    label: Dates 
-    type: markdown
-  hours: 
-    label: Heures et infos complémentaires
-    type: markdown
-  text: 
-    label: Texte de présentation 
-    type: markdown
-  credits: 
-    label: Crédits
-    type: markdown
-  pdfs: 
-    label: pdfs
-    type: structure
-    fields: 
-      title: 
-        label: Titre
-        type: text
-      pdf: 
-        label: pdf
+columns:
+  left:
+    width: 1/4
+    sections:
+      menu:
+        type: fields
+        fields:
+          pageImages:
+            label: Images de couverture
+            type: headline
+          cover: 
+            label: Image de couverture
+            type: files
+            mode: single
+          ifmenu:
+            label: Si la page apparaît dans un menu…
+            type: headline
+            numbered: false
+          covermenu: 
+            label: Menu - Image de couverture  
+            type: files
+            multiple: false
+          covercolor:
+            label: Menu - Couleur de fond
+            type: radio 
+            options: 
+              black: Noir
+              gray: Gris
+              lightgray: Gris clair 
+            help: Choisir soit une photo de couverture soit une couleur de fond
+          coveryellow: 
+            label: Menu - Filtre jaune
+            type: files
+            multiple: false
+            width: 1/2
+            help: Choisir une image png avec les motifs jaune
+  center:
+    width: 2/4
+    sections:
+      content:
+        type: fields
+        fields:
+          pageText:
+            label: Texte / infos sur le spectacle
+            type: headline
+          genre: 
+            label: Genre
+            type: text
+          compagnie: 
+            label: Nom de la compagnie
+            type: text
+          distribution: 
+            label: Distribution
+            type: textarea
+          datesFormatted: 
+            label: Dates formatées
+            type: structure
+            fields:
+              start: 
+                label: Date de début
+                type: date
+              end: 
+                label: Date de fin 
+                type: date 
+          dates: 
+            label: Dates 
+            type: markdown
+          hours: 
+            label: Heures et infos complémentaires
+            type: markdown
+          text: 
+            label: Texte de présentation 
+            type: markdown
+          credits: 
+            label: Crédits
+            type: markdown
+          pdfs: 
+            label: pdfs
+            type: structure
+            fields: 
+              title: 
+                label: Titre
+                type: text
+              pdf: 
+                label: pdf
+                type: files
+          billeterie:
+            label: Lien billeterie
+            type: url
+          pageRelated:
+            label: Pages liées
+            type: headline
+            numbered: false
+          relatedtitle: 
+            label: Titre du champ pages liées 
+            type: text
+          related:
+            label: Pages liées
+            type: pages
+            query: page.siblings(false)
+  right:
+    width: 1/4
+    sticky: true
+    sections:
+      files:
+        headline: Fichiers
         type: files
-  billeterie:
-    label: Lien billeterie
-    type: url
-  pageRelated:
-    label: Pages liées
-    type: headline
-    numbered: false
-  relatedtitle: 
-    label: Titre du champ pages liées 
-    type: text
-  related:
-    label: Pages liées
-    type: pages
-    query: page.siblings(false)
 
 
