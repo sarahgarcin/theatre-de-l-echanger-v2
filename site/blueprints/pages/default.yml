@@ -13,6 +13,15 @@ fields:
     type: files
     mode: single
     width: 1/2
+    help: Choisir une image png avec les motifs jaune
+  covercolor:
+    label: Couleur de fond
+    type: radio 
+    options: 
+      black: Noir
+      gray: Gris
+      lightgray: Gris clair 
+    help: Choisir soit une photo de couverture soit une couleur de fond
   imgleft: 
     label: Image colonne de gauche
     type: files

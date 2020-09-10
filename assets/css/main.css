@@ -112,6 +112,9 @@ strong {
 .bebas {
   font-family: "Bebas", sans-serif; }
 
+.lmdld {
+  font-family: "LMDLD", sans-serif; }
+
 header {
   width: 100%;
   max-width: 100%;
@@ -123,7 +126,8 @@ header {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding: 0px; }
+  padding: 0px;
+  height: 85px; }
   header.row {
     margin: 0; }
   header a {
@@ -141,9 +145,13 @@ header {
     header .now-frame ul {
       margin: 0; }
       header .now-frame ul li {
-        display: inline-block; }
+        display: inline-block;
+        margin-right: 10px; }
         header .now-frame ul li:after {
-          content: "///"; }
+          content: "///";
+          margin-left: 10px; }
+        header .now-frame ul li:last-child:after {
+          content: ""; }
   header .menu_btn {
     display: block;
     position: relative;
@@ -247,10 +255,12 @@ main {
   padding: 70px 0 0 0;
   font-size: 19px;
   width: 100%;
-  margin: 0px auto; }
+  margin: 0px auto;
+  min-height: calc(100vh - 125px); }
   main .content {
     position: relative;
-    padding: 0; }
+    padding: 0;
+    min-height: calc(100vh - 210px); }
     main .content figure {
       margin: 20px 0; }
     main .content ol {
@@ -285,6 +295,8 @@ main {
 
 .prog-list-wrapper {
   padding: 0 40px; }
+  .prog-list-wrapper > ul {
+    width: 100%; }
   .prog-list-wrapper > ul > li {
     padding: 40px; }
   .prog-list-wrapper h2 {
@@ -326,7 +338,8 @@ footer {
   background: #fff200;
   padding: 20px 20px;
   font-family: "Avenir", sans-serif;
-  letter-spacing: 0.02em; }
+  letter-spacing: 0.02em;
+  width: 100%; }
   footer h1 {
     font-size: 19px;
     margin: 0;
@@ -434,7 +447,8 @@ main .content.spectacle {
       margin: 0; }
 
 main .content.programmation {
-  padding: 0 40px; }
+  padding: 0 40px;
+  position: relative; }
   main .content.programmation h1 {
     width: 100%;
     text-align: center;
@@ -442,6 +456,16 @@ main .content.programmation {
     margin-bottom: 0; }
   main .content.programmation h2 {
     font-size: 30px; }
+  main .content.programmation .archives-btn {
+    top: 30px;
+    left: 58px;
+    width: 150px;
+    position: absolute; }
+    main .content.programmation .archives-btn a {
+      background: #fff200;
+      padding: 10px;
+      font-family: "Bebas", sans-serif;
+      letter-spacing: 0.03em; }
 
 main .content.article {
   padding: 0 20px;
@@ -481,11 +505,11 @@ main .content.article {
   .breadcrumb {
     padding: 20px 40px 10px; }
   .big-menu li {
-    height: 70vh; }
+    height: calc(100vh - 210px); }
     .big-menu li a {
-      height: 70vh; }
+      height: calc(100vh - 210px); }
       .big-menu li a .yellow-pattern {
-        height: 70vh; }
+        height: calc(100vh - 210px); }
   main .content.spectacle .lien-billeterie, main .content.spectacle .pdfs-wrapper {
     display: inline-block; }
   main .content.spectacle .lien-billeterie {

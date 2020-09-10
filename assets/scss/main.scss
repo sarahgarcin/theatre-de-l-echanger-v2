@@ -118,6 +118,10 @@
     font-family: $subtitleFont;
   }
 
+  .lmdld{
+    font-family: $titleFont;
+  }
+
 
   // -------------- IMPORT TEMPlATES STYLES --------------
   @import "header.scss";
@@ -137,9 +141,11 @@
     font-size: $textSize;
     width: 100%;
     margin:0px auto;
+    min-height: calc(100vh - 125px);
     .content{
       position: relative;
       padding: 0;
+      min-height: calc(100vh - 210px);
       figure{
         margin: $marginNormal 0;
       }
@@ -187,6 +193,9 @@
 
   .prog-list-wrapper{
     padding: 0 $marginBig;
+    & >ul {
+      width:100%;
+    }
     & > ul > li{
       padding: $marginBig;
     }
@@ -240,6 +249,7 @@
     padding: $marginNormal $marginNormal;
     font-family: $font;
     letter-spacing: 0.02em;
+    width: 100%;
     h1{
       font-size: $textSize;
       margin:0;
@@ -374,6 +384,7 @@ main .content.spectacle{
 
 main .content.programmation{
   padding: 0 $marginBig;
+  position: relative;
   h1 {
     width: 100%;
     text-align: center; 
@@ -382,6 +393,19 @@ main .content.programmation{
   }
   h2{
     font-size: 30px;
+  }
+  .archives-btn{
+    top: $marginNormal + 10px;
+    left: $marginBig + 18px;
+    width: 150px;
+    position: absolute; 
+    a{
+      background: $mainColor;
+      // border-left: 8px solid $mainColor;
+      padding: $marginSmall;
+      font-family: $subtitleFont;
+      letter-spacing: 0.03em;
+    }
   }
 }
 
@@ -455,12 +479,13 @@ main .content.article{
 
   // -------------- GABARIT MENU GENERAL --------------
   .big-menu{
+
     li{
-      height: 70vh;
+      height: calc(100vh - 210px);
       a{
-        height: 70vh;
+        height: calc(100vh - 210px);
         .yellow-pattern{
-          height: 70vh;
+          height: calc(100vh - 210px);
         }
       }
     }

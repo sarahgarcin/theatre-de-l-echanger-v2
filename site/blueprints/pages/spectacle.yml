@@ -32,6 +32,16 @@ fields:
   distribution: 
     label: Distribution
     type: textarea
+  datesFormatted: 
+    label: Dates formatées
+    type: structure
+    fields:
+      start: 
+        label: Date de début
+        type: date
+      end: 
+        label: Date de fin 
+        type: date 
   dates: 
     label: Dates 
     type: markdown

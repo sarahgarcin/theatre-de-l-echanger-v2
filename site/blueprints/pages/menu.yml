@@ -31,10 +31,19 @@ columns:
         type: fields
         fields:
           cover:
-            label: Photo de couverture
+            label: Photo de couverture pour le menu 
             type: files
+          covercolor:
+            label: Couleur de fond
+            type: radio 
+            options: 
+              black: Noir
+              gray: Gris
+              lightgray: Gris clair 
+            help: Choisir soit une photo de couverture soit une couleur de fond
           coveryellow: 
             label: Filtre jaune de couverture
             type: files
             mode: single
             width: 1/2
+            help: Choisir une image png avec les motifs jaune

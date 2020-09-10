@@ -2,7 +2,7 @@
 	$now = $site->children()->findBy('intendedTemplate', 'now');
 ?>
 
-<div class="now-frame">
+<div class="now-frame col-sm-offset-2">
 	<h2><?= $now->title(); ?></h2>
 	<ul>
 		<?php foreach ($now->actu()->split() as $actu): ?>

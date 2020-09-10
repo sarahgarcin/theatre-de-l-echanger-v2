@@ -8,8 +8,15 @@
 				<?php foreach ($site->children()->listed() as $child):?>
 					<?php if($cover = $child->cover()->toFile()):?>
 						<li class="col-xs-12 col-sm" style="background-image: linear-gradient(black, black), url(<?= $cover->url()?>)">
-					<?php else:?>
-						<li class="col-xs-12 col-sm" style="background-color:#000">
+					<?php else:
+						if($child->covercolor() == 'black'):
+							$color = '#000';
+						elseif($child->covercolor() == 'gray'):
+							$color = '#3F3F3F';
+						else:
+							$color = 'rgba(0,0,0, 0.55)';
+						endif?>
+						<li class="col-xs-12 col-sm" style="<?php e($child->covercolor()->isNotempty(), 'background-color:'. $color, 'background-color:#000')?>">
 					<?php endif;?>
 						<a href="<?= $child->url()?>" title="<?= $child->title()?>">
 							<?php if($coveryellow = $child->coveryellow()->toFile()):?> 
