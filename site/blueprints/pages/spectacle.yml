@@ -64,9 +64,6 @@ columns:
               end: 
                 label: Date de fin 
                 type: date 
-          dates: 
-            label: Dates 
-            type: markdown
           hours: 
             label: Heures et infos complémentaires
             type: markdown

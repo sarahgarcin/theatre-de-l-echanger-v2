@@ -1,9 +1,9 @@
 <footer>
   <div class="row middle-xs">
-    <div class="address col-xs-12 col-md-6">
+    <div class="address col-xs-12 col-sm-6">
       <?= $site->address()->kt()?>
     </div>
-    <div class="socialnetworks col-xs-12 col-md-6">
+    <div class="socialnetworks col-xs-12 col-sm-6">
       <ul>
         <?php foreach($site->social()->toStructure() as $social):?>
           <li>

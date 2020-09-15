@@ -13,24 +13,24 @@ ob_start();
 
     @font-face {
 		    font-family: 'LMDLD';
-		    src: url('/theatre-lechangeur/v2/assets/fonts/LMDLD.woff2') format('woff2'),
-		        url('/theatre-lechangeur/v2/assets/fonts/LMDLD.woff') format('woff');
+		    src: url('http://site.sarahgarcin.com/theatre-lechangeur/v2/assets/fonts/LMDLD.woff2') format('woff2'),
+		        url('http://site.sarahgarcin.com/theatre-lechangeur/v2/assets/fonts/LMDLD.woff') format('woff');
 		    font-weight: normal;
 		    font-style: normal;
 		}
 
 		@font-face {
 		    font-family: 'Bebas';
-		    src: url('/theatre-lechangeur/v2/assets/fonts/BebasNeue.woff2') format('woff2'),
-		        url('/theatre-lechangeur/v2/assets/fonts/BebasNeue.woff') format('woff');
+		    src: url('http://site.sarahgarcin.com/theatre-lechangeur/v2/assets/fonts/BebasNeue.woff2') format('woff2'),
+		        url('http://site.sarahgarcin.com/theatre-lechangeur/v2/assets/fonts/BebasNeue.woff') format('woff');
 		    font-weight: normal;
 		    font-style: normal;
 		}
 
 		@font-face {
 		    font-family: 'Avenir';
-		    src: url('/theatre-lechangeur/v2/assets/fonts/AvenirNextLTPro-Cn.woff2') format('woff2'),
-		        url('/theatre-lechangeur/v2/assets/fonts/AvenirNextLTPro-Cn.woff') format('woff');
+		    src: url('http://site.sarahgarcin.com/theatre-lechangeur/v2/assets/fonts/AvenirNextLTPro-Cn.woff2') format('woff2'),
+		        url('http://site.sarahgarcin.com/theatre-lechangeur/v2/assets/fonts/AvenirNextLTPro-Cn.woff') format('woff');
 		    font-weight: normal;
 		    font-style: normal;
 		}
@@ -57,38 +57,52 @@ ob_start();
 
 			h1, h2, h3, h4, h5, h6 { margin:0; line-height: 1.2; }
 
-			h1 { font-size: 32px; font-family: "LMDLD";font-weight: 500; color: #3F3F3F;}
+			h1 { font-size: 38px; font-family: "LMDLD", sans-serif ;font-weight: 500; color: #3F3F3F; text-transform: uppercase;}
 
-			h2 { font-size: 25px; color: #000; font-weight:normal; font-family: "Bebas", sans-serif; letter-spacing: 0.02em; margin-top:20px;}
+			h2 { font-size: 19px; color: #3F3F3F; font-weight:normal; font-family: "Bebas", sans-serif; letter-spacing: 0.02em; margin-top:20px; text-transform: uppercase;}
 
 			h2+p{
 				margin-top: 20px;
 			}
 
-			h3 { font-size: 19px; color: #3F3F3F; font-weight:normal; font-family: "Bebas", sans-serif; letter-spacing: 0.02em; margin-bottom:10px; letter-spacing: 0.02em;}
+			h3 { font-size: 19px; color: #3F3F3F; font-weight:normal; font-family: "Bebas", sans-serif; letter-spacing: 0.02em; margin-bottom:10px; letter-spacing: 0.02em; text-transform: uppercase;}
 
 			h4 { font-size: 19px; text-transform: uppercase; font-family: "Bebas", sans-serif;font-weight: normal; letter-spacing: 0.02em;}
 
-			h5 { font-size: 16px; }
+			h5 { font-size: 15px; }
 
-			p, ul, ol { font-size: 16px; font-weight: normal; margin-bottom: 20px; }
+			p, ul, ol { font-size: 15px; font-weight: normal; margin-bottom: 20px; }
 
-			.container { display: block !important; clear: both !important; margin: 0 auto !important; max-width: 580px !important; }
+			.container { display: block !important; clear: both !important; margin: 0 auto !important; /*max-width: 580px !important;*/ max-width: 720px !important;}
 
 			.container table { width: 100% !important; border-collapse: collapse; }
 
 			.container .preview { font-size: 12px; text-decoration: underline; padding: 10px 0;}
 			.container .masthead { background: rgb(255, 242, 0);}
 
-			.container .content { background: white; padding: 30px 0; }
+			.container .content { background: white; padding: 30px 0 0; }
 
 			.container .content > section { border-bottom: 4px solid rgb(255, 242, 0); margin-bottom: 30px; padding-bottom: 10px}
 
-			.container .content.footer { background: none; }
+			.container .content.footer { background: none; padding-top: 0; padding-bottom: 30px;}
 
-			.container .content.footer p { margin-bottom: 0; color: #888; text-align: center; font-size: 14px; }
 
-			.container .content.footer a { color: #888; text-decoration: none; font-weight: bold; }
+			.container .content.footer p { margin-bottom: 0; color: #000; text-align: center; font-size: 14px; }
+
+			.container .content.footer a { color: #000; text-decoration: none; border:none; text-transform: none}
+
+			.container .content.footer ul{
+				list-style: none;
+				margin-top: 20px;
+			}
+
+			.container .content.footer ul li{
+				display: inline-block;
+			}
+
+			.container .content.footer .address{
+				margin-bottom: 20px;
+			}
 
 			.container .content.footer a:hover { text-decoration: underline; }
     </style>
@@ -128,7 +142,42 @@ ob_start();
         <table>
           <tr>
             <td class="content footer" align="center">
-
+            	<p>
+       					Retrouvez l'intégralité de notre actualité sur nos réseaux sociaux
+       					<ul>
+       						<li class="social-networks">
+       							 <a href="https://www.facebook.com/theatreechangeur/" alt="Facebook"><img src="http://archives.lechangeur.org/newsletter/61_08072020/fb.png" alt="Facebook" width="16" height="16" /> <p>@theatreechangeur</p></a>
+       						</li>
+       						<li>
+       							<a href="https://twitter.com/echangeur_l" alt="Twitter">	
+       								<img src="http://archives.lechangeur.org/newsletter/61_08072020/tw.png" alt="Twitter" width="16" height="16" /><p>@echangeur_l</p>
+       							</a>
+       						</li>
+       						<li>
+       							<a href="https://www.instagram.com/theatrelechangeur/" alt="Instagram">
+       								<img src="http://archives.lechangeur.org/newsletter/61_08072020/insta.png" alt="Instagram" width="16" height="16" />
+       								<p>@theatrelechangeur</p>
+       							</a>
+       						</li>
+       					</ul>
+       				</p>
+              <p class="address">
+              	59, avenue du général de Gaulle <br> 93170 Bagnolet <br> 150m du métro Gallieni (Ligne 3)
+              </p>
+              <p class='reserver'>	
+                	Réservations 01 43 62 71 20</a> 
+                	<a href="mailto:reservation@lechangeur.org">
+                		Reservation@lechangeur.org 
+                	</a>
+                	<a href="http://www.lechangeur.org" alt="">
+                		www.lechangeur.org
+                	</a>
+              </p>
+              <p class='desinscrire' style="margin-top: 20px;">
+                <a href="mailto:newsletter@lechangeur.org?subject=Désinscription" ">
+                	Se désinscrire de la newsletter
+                </a>
+              </p>
 						</td>
 					</tr>
 				</table>
@@ -142,5 +191,5 @@ ob_start();
 <?php
 
 // Get the content that is in the buffer and put it in your file //
-file_put_contents($page->root().'/'.Str::slug($page->title()).'.html', ob_get_contents());
+file_put_contents($page->root().'/'.Str::slug($page->title()).'.md', ob_get_contents());
 ?>

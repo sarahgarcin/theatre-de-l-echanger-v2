@@ -7,7 +7,7 @@
 				<ul class="row">
 				<?php foreach ($page->children()->listed() as $child):?>
 					<?php if($cover = $child->cover()->toFile()):?>
-						<li class="col-xs-12 col-sm" style="background-image: linear-gradient(black, black), url(<?= $cover->url()?>)">
+						<li class="col-xs col-sm" style="background-image: linear-gradient(black, black), url(<?= $cover->url()?>)">
 					<?php else:
 						$color = "#000";
 						if($child->covercolor() == 'black'):
@@ -17,7 +17,7 @@
 						else:
 							$color = 'rgba(0,0,0, 0.55)';
 						endif?>
-						<li class="col-xs-12 col-sm" style="<?php e($child->covercolor()->isNotempty(), 'background-color:'. $color, 'background-color:#000')?>">
+						<li class="col-xs col-sm" style="<?php e($child->covercolor()->isNotempty(), 'background-color:'. $color, 'background-color:#000')?>">
 					<?php endif;?>
 						<a href="<?= $child->url()?>" title="<?= $child->title()?>" >
 							<?php if($coveryellow = $child->coveryellow()->toFile()):?> 

@@ -1,9 +1,13 @@
 <?php snippet('header') ?>
 <?php snippet('menu') ?>
 
+<?php $days = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];?>
+<?php $months = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];?>
+
+
 	<main>
 		<div class="content prog-list-wrapper spectacle row">
-			<div class="left-spectacle col-xs-12 col-sm-5">
+			<div class="left-spectacle col-xs-12 <?php e($page->cover()->isNotEmpty(), 'col-sm-5', 'col-sm-3')?>">
 				<?php if($image = $page->cover()->toFile()):?>
 					<div class="prog-cover-wrapper">
 						<?= $image->thumb([
@@ -18,10 +22,31 @@
 				<h4><?= $page->genre()->html()?></h4>
 				<h2><?= $page->title()->html()?></h2>
 				<h4 class="compagnie"><?= $page->compagnie()->html()?></h4>
-				<h3>
-					<?= $page->dates()->html()?><br>
-					<span class="hours"><?= $page->hours()->kt()?></span>
-				</h3>
+				<?php if($dates = $page->datesFormatted()->toStructure()):?>
+					<h3>
+						<?php foreach($dates as $date):?>
+							<?php 
+								$dayStart = $days[$date->start()->toDate('N')-1];
+								$numberStart = $date->start()->toDate('d');
+								$monthStart = $months[$date->start()->toDate('n')-1];
+								$yearStart = $date->start()->toDate('Y');
+								$dayEnd = $days[$date->end()->toDate('N')-1];
+								$numberEnd = $date->end()->toDate('d');
+								$monthEnd = $months[$date->end()->toDate('n')-1];
+								$yearEnd = $date->end()->toDate('Y');
+
+								$dateStart = $dayStart.' '.$numberStart.' '.$monthStart.' '.$yearStart;
+								$dateEnd = $dayEnd.' '.$numberEnd.' '.$monthEnd.' '.$yearEnd;
+							?>
+							<?php if($dateStart == $dateEnd):?>
+								<?= $dateStart?>
+							<?php else:?>
+								<?= $dateStart?> >> <?= $dateEnd?>
+							<?php endif;?>
+						<?php endforeach?>
+					</h3>
+					<div class="hours"><?= $page->hours()->kt()?></div>
+				<?php endif;?>
 				<div class="distribution"><?= $page->distribution()->kt()?></div>
 				<?php if($page->pdfs()->isNotEmpty()):?>
 					<ul class="pdfs-wrapper">
@@ -49,33 +74,32 @@
 				<div class="credits-text">
 					<?= $page->credits()->kt()?>
 				</div>
-				<div class="related">
-					<?php if($page->relatedtitle()->isNotEmpty()):?>
-						<h3><?= $page->relatedtitle()->html()?></h3>
-					<?php endif;?>
-					<?php 
-						$related = $page->related()->toPages();
-						if ($related->count() > 0):?>
-						<ul class="row">
-					    <?php foreach($related as $article): ?>
-					    <li class="col-xs-6 col-sm-4">
-					      <a href="<?= $article->url() ?>">
-						    	<?php if($image = $article->cover()->toFile()):?>
-										<div class="prog-cover-wrapper">
-											<?= $image->thumb([
-									      'width'   => 300,
-									      'height'  => 300,
-									      'quality' => 80
-									    ])->html();?>
-										</div>
-									<?php endif;?>
-					      <h4><?= $article->title() ?></h4>
-					      </a>
-					    </li>
-					    <?php endforeach ?>
-					  </ul>
+				<?php $related = $page->related()->toPages();
+					if ($related->count() > 0):?>
+						<div class="related">
+						<?php if($page->relatedtitle()->isNotEmpty()):?>
+							<h3><?= $page->relatedtitle()->html()?></h3>
 						<?php endif;?>
-				</div>
+							<ul class="row">
+						    <?php foreach($related as $article): ?>
+						    <li class="col-xs-6 col-sm-4">
+						      <a href="<?= $article->url() ?>">
+							    	<?php if($image = $article->cover()->toFile()):?>
+											<div class="prog-cover-wrapper">
+												<?= $image->thumb([
+										      'width'   => 300,
+										      'height'  => 300,
+										      'quality' => 80
+										    ])->html();?>
+											</div>
+										<?php endif;?>
+						      <h4><?= $article->title() ?></h4>
+						      </a>
+						    </li>
+						    <?php endforeach ?>
+						  </ul>
+						</div>
+					<?php endif;?>
 				
 			</div>
 		</div>

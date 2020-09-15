@@ -4,7 +4,7 @@
 	<main>
 		<?php snippet('breadcrumb') ?>
 		<div class="content article row">
-			<div class="left-col col-xs-12 col-sm-5">
+			<div class="left-col col-xs-12 <?php e($page->imgleft()->isNotEmpty(), 'col-sm-5', 'col-sm-3')?>">
 				<div class="photoswipe image-gallery" itemscope itemtype="http://schema.org/ImageGallery">
 					<div class="row">
 						<?php if($image = $page->imgleft()->toFile()):?>

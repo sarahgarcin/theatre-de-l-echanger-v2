@@ -30,7 +30,7 @@ a {
   text-decoration: none; }
 
 a:visited {
-  color: #3F3F3F; }
+  color: #000; }
 
 a:hover {
   color: #000; }
@@ -107,13 +107,17 @@ strong {
   background: #fff200; }
 
 .clair {
-  color: rgba(0, 0, 0, 0.55); }
+  color: #737373; }
 
 .bebas {
   font-family: "Bebas", sans-serif; }
 
 .lmdld {
   font-family: "LMDLD", sans-serif; }
+
+.jaune {
+  background: #fff200;
+  padding: 0 3px; }
 
 header {
   width: 100%;
@@ -251,12 +255,16 @@ header {
 .hide-for-small-only {
   display: none; }
 
+body[data-template="home"] main, body[data-template="menu"] main {
+  max-width: 100%; }
+
 main {
-  padding: 70px 0 0 0;
+  padding: 85px 0 0 0;
   font-size: 19px;
   width: 100%;
   margin: 0px auto;
-  min-height: calc(100vh - 125px); }
+  min-height: calc(100vh - 125px);
+  max-width: 1600px; }
   main .content {
     position: relative;
     padding: 0;
@@ -301,24 +309,27 @@ main {
     padding: 40px; }
   .prog-list-wrapper h2 {
     font-size: 2em; }
-  .prog-list-wrapper .hours p {
-    margin-top: 0; }
   .prog-list-wrapper h3 {
     font-size: 19px;
     color: #3F3F3F;
     font-family: "Bebas", sans-serif;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.05em;
     margin: 10px 0px 20px 0; }
   .prog-list-wrapper h4 {
     font-size: 19px;
     color: #3F3F3F;
     font-family: "Bebas", sans-serif;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.05em;
     margin-bottom: 10px; }
   .prog-list-wrapper h4.compagnie {
-    color: rgba(0, 0, 0, 0.55); }
+    color: #737373; }
+  .prog-list-wrapper .hours {
+    margin-top: 0;
+    font-family: "Bebas", sans-serif;
+    letter-spacing: 0.05em;
+    color: #3F3F3F; }
   .prog-list-wrapper .lien-billeterie, .prog-list-wrapper .pdfs-wrapper > li {
-    margin-top: 15px;
+    margin-top: 20px;
     border-left: 4px solid #fff200;
     padding: 4px 10px;
     text-transform: uppercase;
@@ -356,19 +367,30 @@ footer {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
-      -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-      justify-content: space-between; }
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start; }
       footer .socialnetworks ul li a {
         color: #3F3F3F;
         -webkit-transition: all 0.5s ease-in-out;
         -o-transition: all 0.5s ease-in-out;
-        transition: all 0.5s ease-in-out; }
+        transition: all 0.5s ease-in-out;
+        margin-right: 10px; }
         footer .socialnetworks ul li a:hover {
           color: #000; }
 
+.big-menu ul {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  height: calc(100vh - 210px); }
+
 .big-menu li {
-  height: 15vh;
+  height: auto;
   background-size: cover;
   background-repeat: no-repeat;
   background-blend-mode: saturation;
@@ -378,7 +400,7 @@ footer {
   position: relative;
   cursor: pointer; }
   .big-menu li a {
-    height: 15vh;
+    height: 100%;
     display: block;
     background-color: rgba(255, 255, 255, 0.1);
     -webkit-transition: all 0.5s ease-in-out;
@@ -424,11 +446,6 @@ main .content.spectacle {
   padding: 40px 0; }
   main .content.spectacle h2 {
     font-size: 45px; }
-  main .content.spectacle .hours {
-    display: inline-block; }
-    main .content.spectacle .hours p {
-      background: #fff200;
-      padding: 0 3px; }
   main .content.spectacle .right-spectacle {
     padding: 40px; }
   main .content.spectacle .lien-billeterie, main .content.spectacle .pdfs-wrapper {
@@ -457,15 +474,15 @@ main .content.programmation {
   main .content.programmation h2 {
     font-size: 30px; }
   main .content.programmation .archives-btn {
-    top: 30px;
-    left: 58px;
-    width: 150px;
-    position: absolute; }
+    margin-top: 20px;
+    width: 100%;
+    text-align: center; }
     main .content.programmation .archives-btn a {
       background: #fff200;
-      padding: 10px;
+      padding: 5px 10px 3px;
       font-family: "Bebas", sans-serif;
-      letter-spacing: 0.03em; }
+      letter-spacing: 0.05em;
+      color: #3F3F3F; }
 
 main .content.article {
   padding: 0 20px;
@@ -504,6 +521,11 @@ main .content.article {
       padding: 0; }
   .breadcrumb {
     padding: 20px 40px 10px; }
+  .big-menu ul {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row; }
   .big-menu li {
     height: calc(100vh - 210px); }
     .big-menu li a {

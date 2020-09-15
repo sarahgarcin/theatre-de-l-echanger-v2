@@ -61,8 +61,8 @@
 														<?= $dateStart?> >> <?= $dateEnd?>
 													<?php endif;?>
 												<?php endforeach?>
-												<span class="hours"><?= $child->hours()->kt()?></span>
 											</h3>
+											<div class="hours"><?= $child->hours()->kt()?></div>
 										<?php endif;?>
 									</div>
 								</a>
