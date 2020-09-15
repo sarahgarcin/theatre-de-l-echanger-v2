@@ -38,23 +38,17 @@ columns:
           contentSettings:
             label: Contenu à afficher dans la page
             type: headline
-          residence: 
-            label: Sélectionnez les évènements de résidences 
-            type: pages
-            query: site.index.children.findBy('uid', 'residences')
-            multiple: true
-          actions: 
-            label: Sélectionnez les évènements d'actions artistiques 
-            type: pages
-            query: site.index.children.findBy('uid', 'actions-artistiques')
-            multiple: true
+          info: 
+            label: Informations sur la page
+            type: info
+            text: Les spectacles, résidences ou actions possédant un lien vers la billetterie s'affichent automatiquement sur cette page 
       drafts:
         headline: Brouillons
         type: pages
         status: draft
         templates: 
           - spectacle
-        help: Cette section permet d'ajouter des nouvelles pages non présentes dans le site comme la page du pass illimité
+        help: Cette section permet d'ajouter des nouvelles pages non présentes dans le site comme la page du Pass Illimité par exemple
       published:
         headline: Pages Publiées
         type: pages

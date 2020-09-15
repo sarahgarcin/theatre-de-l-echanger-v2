@@ -8,11 +8,6 @@
 		<div class="content prog-list-wrapper programmation row">
 			<h1><?= $page->title()?></h1>	
 			<ul class='row'>
-					<?php 
-						$currentdatetime = date('Y-m-d');
-						// tableau pour enregistrer toutes les pages billetterie (sauf pass illimité)
-						$spectacles = array();
-					?>
 					
 					<!-- Afficher les pages de la page billetterie == pass illimité -->
 					<?php foreach($page->children()->listed() as $child):?>
@@ -42,40 +37,10 @@
 								</a>
 							</li>
 					<?php endforeach?>
-					
-					<!-- Envoyer les pages spectacle dans le tableau-->
-					<?php 
-						foreach($site->index()->findBy('uid', 'spectacles')->children()->listed() as $child){
-							// Remplir le tableau
-							array_push($spectacles, $child);
-						}
-
-						//Envoyer les pages résidences choisies dans le tableau
-						foreach($page->residence()->toPages() as $residence){
-							// Remplir le tableau
-							array_push($spectacles, $residence);
-						}
-
-						//Envoyer les pages actions artistiques choisies dans le tableau
-						foreach($page->actions()->toPages() as $action){
-							// Remplir le tableau
-							array_push($spectacles, $action);
-						}
-
-						// Classe le tableau par dates 
-						// function sortFunction( $a, $b ) {
-						// 	print_r($a['content']);
-						// 	// print_r($a['datesformatted']['start']);
-						//   // return strtotime($a["date"]) - strtotime($b["date"]);
-						// }
-						// usort($spectacles, "sortFunction");
-						// var_dump($spectacles);
-					?>
 
 					<!-- Afficher les pages spectacles -->
-				<?php
 
-				?>
+				<!-- $spectacles dans les controllers -->
 					<?php foreach($spectacles as $child):?>
 						<?php $dates = $child->datesFormatted()->toStructure(); ?>
 
