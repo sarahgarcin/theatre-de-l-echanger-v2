@@ -5,6 +5,7 @@
 <?php $months = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];?>
 
 	<main>
+		<?php snippet('breadcrumb') ?>
 		<div class="content prog-list-wrapper programmation row">
 			<h1><?= $page->title()?></h1>	
 			<ul class='row'>
@@ -29,7 +30,7 @@
 										<?php if($child->billeterie()->isNotEmpty()):?>
 											<div class="lien-billeterie">
 												<a href="<?= $child->billeterie()?>" title="<?= $child->title()?>" target="_blank">
-													Réservez votre billet
+													Réservez un billet
 												</a>
 											</div>
 										<?php endif;?>

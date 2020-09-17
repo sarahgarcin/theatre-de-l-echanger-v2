@@ -96,7 +96,7 @@ columns:
           related:
             label: Pages liées
             type: pages
-            query: page.siblings(false)
+            query: site.index
   right:
     width: 1/4
     sticky: true

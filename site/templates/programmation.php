@@ -5,8 +5,10 @@
 <?php $months = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];?>
 
 	<main>
+		<?php snippet('breadcrumb') ?>
 		<div class="content prog-list-wrapper programmation row">
-			<?php if($archives = $page->find('archives')):?>
+			<?php $archives = $page->find('archives')?>
+			<?php if( $archives && $archives->children()->count() > 0):?>
 				<div class="archives-btn">
 					<a href="<?= $archives->url()?>" title="<?= $archives->title()?>">
 						<?= $archives->title()?>

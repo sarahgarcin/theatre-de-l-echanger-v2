@@ -123,6 +123,17 @@
     padding: 0 3px;
   }
 
+  .arrow-back{
+    font-family: $subtitleFont;
+    color: $gris;
+    letter-spacing: 0.05em;
+    font-size: 15px;
+    position: absolute; 
+    top: 100px; 
+    left: 22px;
+    z-index: 2;
+  }
+
 
   // -------------- IMPORT TEMPlATES STYLES --------------
   @import "header.scss";
@@ -174,6 +185,8 @@
   .breadcrumb{
     width: 100%;
     padding: $marginNormal $marginNormal $marginSmall; 
+    position: absolute;
+    z-index:2;
     ol{
       display: flex;
       flex-wrap: wrap; 
@@ -358,6 +371,48 @@
 }
 
 // -------------- GABARIT SPECTACLE GENERAL --------------
+.switch-page{
+  width: 100%;
+  padding: 0 40px;
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+
+}
+
+.switch-page .switch-wrapper{
+  width: 45%;
+  min-width: 200px;
+  a{
+    display: flex;
+    align-items: center;
+    &:hover .switch-text{
+      background-color: $mainColor;
+    }
+  }
+
+  &.next-wrapper {
+    a{
+      justify-content: flex-end;
+    }
+  }
+
+  .text-next{
+    text-align: right
+  }
+  .switch-arrow{
+    font-size: 30px;
+    margin-top: -5px;
+    &.arrow-prev{
+      margin-right: 10px;
+    }
+    &.arrow-next{
+      margin-left: 10px;
+    }
+  }
+}
+
 main .content.spectacle{
   padding: $marginBig 0;
   h2{
@@ -396,11 +451,14 @@ main .content.spectacle{
 main .content.programmation{
   padding: 0 $marginBig;
   position: relative;
+  .archives-btn + h1{
+    margin-top: $marginNormal;
+  }
   h1 {
     width: 100%;
     text-align: center; 
-    margin-top: $marginNormal;
-    margin-bottom: 0;
+    margin-top: 60px;
+    margin-bottom: 0px;
   }
   h2{
     font-size: 30px;
@@ -427,8 +485,15 @@ main .content.programmation{
 // -------------- GABARIT ARTICLE GENERAL --------------
 
 main .content.article{
-  padding: 0 $marginNormal;
+  padding: $marginBig $marginNormal;
   margin-bottom: $marginBig*2;
+  a{
+    text-decoration: underline; 
+    text-decoration-color: $mainColor;
+    &:hover{
+      background-color: $mainColor;
+    }
+  }
   h3{
     // background: $mainColor;
     margin-top: $marginBig;
@@ -509,6 +574,12 @@ main .content.article{
   }
 
   // -------------- GABARIT SPECTACLE GENERAL --------------
+  .switch-page {
+    padding: 0 60px;
+    .switch-wrapper{
+      width: 20%;
+    }
+  }
   main .content.spectacle{
     .right-spectacle{
       // padding: 0;
@@ -525,7 +596,7 @@ main .content.article{
 
   // -------------- GABARIT ARTICLE GENERAL --------------
   main .content.article{
-    padding: 0 $marginBig;
+    padding: $marginBig*2 $marginBig;
     .left-col{
       padding-right: $marginNormal;
     }

@@ -6,6 +6,7 @@
 
 
 	<main>
+		<?php snippet('breadcrumb') ?>
 		<div class="content prog-list-wrapper spectacle row">
 			<div class="left-spectacle col-xs-12 <?php e($page->cover()->isNotEmpty(), 'col-sm-5', 'col-sm-3')?>">
 				<?php if($image = $page->cover()->toFile()):?>
@@ -48,6 +49,9 @@
 					<div class="hours"><?= $page->hours()->kt()?></div>
 				<?php endif;?>
 				<div class="distribution"><?= $page->distribution()->kt()?></div>
+				<div class="presentation-text">
+					<?= $page->text()->kt()?>
+				</div>
 				<?php if($page->pdfs()->isNotEmpty()):?>
 					<ul class="pdfs-wrapper">
 						<?php foreach($page->pdfs()->toStructure() as $pdf):?>
@@ -64,13 +68,10 @@
 				<?php if($page->billeterie()->isNotEmpty()):?>
 					<div class="lien-billeterie">
 						<a href="<?= $page->billeterie()?>" title="<?= $page->title()?>" target="_blank">
-							Réservez votre billet
+							Réservez un billet
 						</a>
 					</div>
 				<?php endif;?>
-				<div class="presentation-text">
-					<?= $page->text()->kt()?>
-				</div>
 				<div class="credits-text">
 					<?= $page->credits()->kt()?>
 				</div>
@@ -102,6 +103,35 @@
 					<?php endif;?>
 				
 			</div>
+
+
+			<nav class="switch-page">
+			<?php if($page->hasPrev()) : ?>
+				<div class="prev-wrapper switch-wrapper">
+			  	<a href="<?= $page->prev()->url() ?>">
+			  		<div class="switch-arrow arrow-prev">
+			  			← 
+			  		</div>
+			  		<div class="switch-text text-prev">
+			  			<?= $page->prev()->title() ?>
+			  		</div>
+			  	</a>
+			  </div>
+			<?php endif ?>
+			<?php if($page->hasNext()): ?> 
+				<div class="next-wrapper switch-wrapper">
+			  	<a href="<?= $page->next()->url() ?>">
+			  		<div class="switch-text text-next">
+			  			<?= $page->next()->title() ?>
+			  		</div>
+			  		<div class="switch-arrow arrow-next">
+			  			→
+			  		</div>
+			  	</a>
+			  </div>
+			<?php  endif; ?>
+			</nav>
+
 		</div>
 	</main>
 

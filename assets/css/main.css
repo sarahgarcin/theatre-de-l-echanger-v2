@@ -115,6 +115,16 @@ figure.border {
   background: #fff200;
   padding: 0 3px; }
 
+.arrow-back {
+  font-family: "Bebas", sans-serif;
+  color: #3F3F3F;
+  letter-spacing: 0.05em;
+  font-size: 15px;
+  position: absolute;
+  top: 100px;
+  left: 22px;
+  z-index: 2; }
+
 header {
   width: 100%;
   max-width: 100%;
@@ -276,7 +286,9 @@ main {
 
 .breadcrumb {
   width: 100%;
-  padding: 20px 20px 10px; }
+  padding: 20px 20px 10px;
+  position: absolute;
+  z-index: 2; }
   .breadcrumb ol {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -438,6 +450,46 @@ footer {
     .big-menu li a:hover {
       background-color: transparent; }
 
+.switch-page {
+  width: 100%;
+  padding: 0 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 50px; }
+
+.switch-page .switch-wrapper {
+  width: 45%;
+  min-width: 200px; }
+  .switch-page .switch-wrapper a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    .switch-page .switch-wrapper a:hover .switch-text {
+      background-color: #fff200; }
+  .switch-page .switch-wrapper.next-wrapper a {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end; }
+  .switch-page .switch-wrapper .text-next {
+    text-align: right; }
+  .switch-page .switch-wrapper .switch-arrow {
+    font-size: 30px;
+    margin-top: -5px; }
+    .switch-page .switch-wrapper .switch-arrow.arrow-prev {
+      margin-right: 10px; }
+    .switch-page .switch-wrapper .switch-arrow.arrow-next {
+      margin-left: 10px; }
+
 main .content.spectacle {
   padding: 40px 0; }
   main .content.spectacle h2 {
@@ -462,11 +514,13 @@ main .content.spectacle {
 main .content.programmation {
   padding: 0 40px;
   position: relative; }
+  main .content.programmation .archives-btn + h1 {
+    margin-top: 20px; }
   main .content.programmation h1 {
     width: 100%;
     text-align: center;
-    margin-top: 20px;
-    margin-bottom: 0; }
+    margin-top: 60px;
+    margin-bottom: 0px; }
   main .content.programmation h2 {
     font-size: 30px; }
   main .content.programmation .archives-btn {
@@ -481,8 +535,14 @@ main .content.programmation {
       color: #3F3F3F; }
 
 main .content.article {
-  padding: 0 20px;
+  padding: 40px 20px;
   margin-bottom: 80px; }
+  main .content.article a {
+    text-decoration: underline;
+    -webkit-text-decoration-color: #fff200;
+    text-decoration-color: #fff200; }
+    main .content.article a:hover {
+      background-color: #fff200; }
   main .content.article h3 {
     margin-top: 40px;
     font-family: "LMDLD", sans-serif; }
@@ -528,12 +588,16 @@ main .content.article {
       height: calc(100vh - 210px); }
       .big-menu li a .yellow-pattern {
         height: calc(100vh - 210px); }
+  .switch-page {
+    padding: 0 60px; }
+    .switch-page .switch-wrapper {
+      width: 20%; }
   main .content.spectacle .lien-billeterie, main .content.spectacle .pdfs-wrapper {
     display: inline-block; }
   main .content.spectacle .lien-billeterie {
     margin-left: 40px; }
   main .content.article {
-    padding: 0 40px; }
+    padding: 80px 40px; }
     main .content.article .left-col {
       padding-right: 20px; }
     main .content.article .right-col {
