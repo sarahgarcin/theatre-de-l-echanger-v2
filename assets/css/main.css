@@ -275,6 +275,45 @@ main {
     position: relative;
     padding: 0;
     min-height: calc(100vh - 210px); }
+    main .content .content-inner h1 {
+      font-family: "LMDLD", sans-serif;
+      font-size: 2em;
+      margin-bottom: 0; }
+    main .content .content-inner h1 + p, main .content .content-inner h2 + p, main .content .content-inner h3 + p, main .content .content-inner h4 + p, main .content .content-inner h5 + p, main .content .content-inner h6 + p {
+      margin-top: 0; }
+    main .content .content-inner h2 {
+      font-family: "LMDLD", sans-serif;
+      font-size: 1.5em;
+      margin-bottom: 0;
+      margin-top: 40px; }
+    main .content .content-inner h3 {
+      font-family: "LMDLD", sans-serif;
+      font-size: 1.2em;
+      margin-bottom: 0;
+      margin-top: 40px; }
+    main .content .content-inner h4 {
+      font-family: "Bebas", sans-serif;
+      margin-bottom: 0;
+      font-size: 1.7em;
+      margin-top: 40px;
+      font-weight: normal;
+      letter-spacing: 0.03em; }
+    main .content .content-inner h5 {
+      font-family: "Bebas", sans-serif;
+      margin-bottom: 0;
+      font-size: 1.4em;
+      margin-top: 40px;
+      font-weight: normal;
+      color: #3F3F3F;
+      letter-spacing: 0.03em; }
+    main .content .content-inner h6 {
+      font-family: "Bebas", sans-serif;
+      margin-bottom: 0;
+      font-size: 1.2em;
+      margin-top: 40px;
+      font-weight: normal;
+      color: #3F3F3F;
+      letter-spacing: 0.03em; }
     main .content figure {
       margin: 20px 0; }
     main .content ol {
@@ -285,10 +324,10 @@ main {
       margin: 10px 0; }
 
 .breadcrumb {
-  width: 100%;
   padding: 20px 20px 10px;
   position: absolute;
-  z-index: 2; }
+  z-index: 2;
+  width: 100%; }
   .breadcrumb ol {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -323,14 +362,19 @@ main {
     font-family: "Bebas", sans-serif;
     letter-spacing: 0.05em;
     margin: 10px 0px 20px 0; }
-  .prog-list-wrapper h4 {
+  .prog-list-wrapper h4, .prog-list-wrapper .freedates {
     font-size: 19px;
     color: #3F3F3F;
     font-family: "Bebas", sans-serif;
     letter-spacing: 0.05em;
     margin-bottom: 10px; }
   .prog-list-wrapper h4.compagnie {
-    color: #737373; }
+    color: #737373;
+    margin-bottom: 0; }
+  .prog-list-wrapper .distributionsum p {
+    font-size: 17px;
+    padding-top: 0;
+    margin-top: 0; }
   .prog-list-wrapper .hours {
     margin-top: 0;
     font-family: "Bebas", sans-serif;
@@ -338,7 +382,6 @@ main {
     color: #3F3F3F; }
   .prog-list-wrapper .lien-billeterie, .prog-list-wrapper .pdfs-wrapper > li {
     margin-top: 20px;
-    border-left: 4px solid #fff200;
     padding: 4px 10px;
     text-transform: uppercase;
     font-family: "Bebas", sans-serif;
@@ -347,9 +390,14 @@ main {
       color: #3F3F3F;
       -webkit-transition: color 0.5s ease;
       -o-transition: color 0.5s ease;
-      transition: color 0.5s ease; }
+      transition: color 0.5s ease;
+      border-bottom: 4px solid #fff200; }
       .prog-list-wrapper .lien-billeterie a:hover, .prog-list-wrapper .pdfs-wrapper > li a:hover {
         color: #000; }
+  .prog-list-wrapper .lien-billeterie {
+    margin-left: 0;
+    background-color: #fff200;
+    text-align: center; }
   .prog-list-wrapper .credits-text p {
     font-size: 0.8em; }
 
@@ -363,9 +411,13 @@ footer {
     font-size: 19px;
     margin: 0;
     color: #000; }
-  footer p {
+  footer p, footer a {
     margin: 0;
     font-size: 0.8em; }
+  footer .mentions-legales a {
+    font-size: 13px; }
+    footer .mentions-legales a:hover {
+      text-decoration: underline; }
   footer .socialnetworks {
     text-align: left;
     font-family: "Bebas", sans-serif;
@@ -462,7 +514,11 @@ footer {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-top: 50px; }
+  margin-top: 100px; }
+  .switch-page.no-prev {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end; }
 
 .switch-page .switch-wrapper {
   width: 45%;
@@ -492,14 +548,21 @@ footer {
 
 main .content.spectacle {
   padding: 40px 0; }
-  main .content.spectacle h2 {
-    font-size: 45px; }
+  main .content.spectacle .spectacle-header h2 {
+    font-size: 30px;
+    margin-top: 0; }
   main .content.spectacle .right-spectacle {
     padding: 40px; }
-  main .content.spectacle .lien-billeterie, main .content.spectacle .pdfs-wrapper {
-    display: block; }
+  main .content.spectacle .prog-cover-wrapper + .spectacle-btn {
+    padding-top: 0; }
+  main .content.spectacle .spectacle-btn {
+    padding: 0 20px 40px 20px;
+    text-align: center; }
   main .content.spectacle .lien-billeterie {
-    margin-left: 0; }
+    margin-left: 0;
+    background-color: #fff200; }
+  main .content.spectacle .distribution, main .content.spectacle .presentation-text {
+    margin-bottom: 40px; }
   main .content.spectacle .related {
     margin-top: 40px;
     padding-top: 20px;
@@ -512,21 +575,21 @@ main .content.spectacle {
       margin: 0; }
 
 main .content.programmation {
-  padding: 0 40px;
+  padding: 40px;
   position: relative; }
   main .content.programmation .archives-btn + h1 {
     margin-top: 20px; }
   main .content.programmation h1 {
     width: 100%;
     text-align: center;
-    margin-top: 60px;
+    margin-top: 20px;
     margin-bottom: 0px; }
   main .content.programmation h2 {
     font-size: 30px; }
   main .content.programmation .archives-btn {
-    margin-top: 20px;
-    width: 100%;
-    text-align: center; }
+    text-align: center;
+    margin: auto;
+    margin-top: 20px; }
     main .content.programmation .archives-btn a {
       background: #fff200;
       padding: 5px 10px 3px;
@@ -592,10 +655,10 @@ main .content.article {
     padding: 0 60px; }
     .switch-page .switch-wrapper {
       width: 20%; }
-  main .content.spectacle .lien-billeterie, main .content.spectacle .pdfs-wrapper {
-    display: inline-block; }
-  main .content.spectacle .lien-billeterie {
-    margin-left: 40px; }
+  main .content.spectacle .spectacle-btn {
+    padding: 50% 30px 0 30px; }
+  main .content.spectacle .spectacle-header h2 {
+    font-size: 3.8vw; }
   main .content.article {
     padding: 80px 40px; }
     main .content.article .left-col {

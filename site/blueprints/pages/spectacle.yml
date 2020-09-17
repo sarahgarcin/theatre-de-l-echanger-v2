@@ -51,6 +51,9 @@ columns:
           compagnie: 
             label: Nom de la compagnie
             type: text
+          distributionsum: 
+            label: Résumé de la distribution
+            type: textarea
           distribution: 
             label: Distribution
             type: textarea
@@ -64,6 +67,17 @@ columns:
               end: 
                 label: Date de fin 
                 type: date 
+          displaydates:
+            label: Afficher les dates formatées
+            type: toggle
+            text:
+              - Oui
+              - Non
+          freedates:
+            label: Dates champ libre
+            type: textarea
+            when:
+              displaydates: true
           hours: 
             label: Heures et infos complémentaires
             type: markdown

@@ -43,7 +43,10 @@
 			</div>
 			<div class="right-col col-xs-12 col-sm-6">
 				<h1><?= $page->title()->html()?></h1>
-				<?= $page->text()->kt()?>
+				<div class="content-inner">
+					<?= $page->text()->kt()?>
+				</div>
+				
 			</div>
 		</div>
 		

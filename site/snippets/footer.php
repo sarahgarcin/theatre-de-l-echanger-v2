@@ -2,6 +2,12 @@
   <div class="row middle-xs">
     <div class="address col-xs-12 col-sm-6">
       <?= $site->address()->kt()?>
+      <div class="mentions-legales">
+        <?php $mentions = $site->index()->findBy('uid', 'mentions-legales')?>
+        <a href="<?= $mentions->url() ?>" title="<?= $mentions->title() ?>">
+          <?= $mentions->title() ?>
+        </a>
+      </div>
     </div>
     <div class="socialnetworks col-xs-12 col-sm-6">
       <ul>

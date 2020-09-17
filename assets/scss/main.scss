@@ -165,6 +165,56 @@
       position: relative;
       padding: 0;
       min-height: calc(100vh - 210px);
+      .content-inner{
+        // padding: 0;
+        h1{
+          font-family: $titleFont;
+          font-size: 2em;
+          margin-bottom:0;
+        }
+        h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
+          margin-top: 0;
+        }
+        h2{
+          font-family: $titleFont;
+          font-size: 1.5em;
+          margin-bottom:0;
+          margin-top: $marginBig;
+        }
+        h3{
+          font-family: $titleFont;
+          font-size: 1.2em;
+          margin-bottom:0;
+          margin-top: $marginBig;
+        }
+        h4{
+          font-family: $subtitleFont;
+          margin-bottom:0;
+          font-size: 1.7em;
+          margin-top: $marginBig;
+          font-weight: normal;
+          letter-spacing: 0.03em;
+        }
+        h5{
+          font-family: $subtitleFont;
+          margin-bottom:0;
+          font-size: 1.4em;
+          margin-top: $marginBig;
+          font-weight: normal;
+          color: $gris;
+          letter-spacing: 0.03em;
+        }
+        h6{
+          font-family: $subtitleFont;
+          margin-bottom:0;
+          font-size: 1.2em;
+          margin-top: $marginBig;
+          font-weight: normal;
+          color: $gris;
+          letter-spacing: 0.03em;
+        }
+      }
+
       figure{
         margin: $marginNormal 0;
       }
@@ -183,10 +233,10 @@
   } 
 
   .breadcrumb{
-    width: 100%;
     padding: $marginNormal $marginNormal $marginSmall; 
     position: absolute;
     z-index:2;
+    width:100%;
     ol{
       display: flex;
       flex-wrap: wrap; 
@@ -231,7 +281,7 @@
       margin: $marginSmall 0px $marginNormal 0;
     }
 
-    h4{
+    h4, .freedates{
       font-size: 19px;
       color: $gris; 
       font-family: $subtitleFont; 
@@ -240,7 +290,16 @@
     }
 
     h4.compagnie{
-    color: $lightgray;
+      color: $lightgray;
+      margin-bottom: 0;
+    }
+
+    .distributionsum{
+      p{
+        font-size: 17px;
+        padding-top: 0;
+        margin-top: 0;
+      }
     }
 
     .hours {
@@ -252,12 +311,21 @@
 
     .lien-billeterie, .pdfs-wrapper > li{
       margin-top: $marginNormal;
-      border-left: 4px solid $mainColor;
+      // border-left: 4px solid $mainColor;
       padding: 4px $marginSmall; 
       text-transform: uppercase;
       font-family: $subtitleFont;
-      a{color: $gris; transition:color 0.5s ease; &:hover{color: #000;}}
+      a{
+        color: $gris; transition:color 0.5s ease; &:hover{color: #000;}
+        border-bottom: 4px solid $mainColor;
+      }
       letter-spacing: 0.02em; 
+    }
+
+    .lien-billeterie{
+      margin-left: 0;
+      background-color: $mainColor;
+      text-align: center;
     }
     .credits-text{
       p{
@@ -278,10 +346,16 @@
       margin:0;
       color: #000;
     }
-    p{
+    p, a{
       margin:0;
       font-size: $smallText;
 
+    }
+    .mentions-legales a{
+      font-size: 13px;
+      &:hover{
+        text-decoration: underline;
+      }
     }
     .socialnetworks{
       text-align: left;
@@ -377,7 +451,10 @@
   display: flex; 
   justify-content: space-between;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 100px;
+  &.no-prev{
+    justify-content: flex-end;
+  }
 
 }
 
@@ -415,18 +492,30 @@
 
 main .content.spectacle{
   padding: $marginBig 0;
-  h2{
-    font-size: 45px;
+  .spectacle-header h2{
+    font-size: 30px;
+    margin-top: 0;
   }
   .right-spectacle{
     padding: $marginBig;
   }
 
-  .lien-billeterie, .pdfs-wrapper{
-    display: block;
+  .prog-cover-wrapper + .spectacle-btn{
+    padding-top: 0;
   }
+
+  .spectacle-btn{
+    padding: 0  $marginNormal $marginBig $marginNormal;
+    text-align: center; 
+  }
+
   .lien-billeterie{
     margin-left: 0;
+    background-color: $mainColor;
+  }
+
+  .distribution, .presentation-text{
+    margin-bottom: $marginBig;
   }
 
   .related{
@@ -449,7 +538,7 @@ main .content.spectacle{
 // -------------- GABARIT PROGRAMMATION GENERAL --------------
 
 main .content.programmation{
-  padding: 0 $marginBig;
+  padding: $marginBig;
   position: relative;
   .archives-btn + h1{
     margin-top: $marginNormal;
@@ -457,19 +546,20 @@ main .content.programmation{
   h1 {
     width: 100%;
     text-align: center; 
-    margin-top: 60px;
+    margin-top: $marginNormal;
     margin-bottom: 0px;
   }
   h2{
     font-size: 30px;
   }
+
   .archives-btn{
     // top: $marginNormal + 10px;
     // left: $marginBig + 18px;
     // left: 18px; 
-    margin-top: $marginNormal ;
-    width: 100%;
     text-align: center;
+    margin: auto;
+    margin-top: $marginNormal ;
     // position: absolute; 
     a{
       background: $mainColor;
@@ -480,6 +570,7 @@ main .content.programmation{
       color: $gris;
     }
   }
+
 }
 
 // -------------- GABARIT ARTICLE GENERAL --------------
@@ -549,7 +640,7 @@ main .content.article{
   }
 
   .breadcrumb{
-    padding: $marginNormal $marginBig $marginSmall; 
+    padding: $marginNormal $marginBig $marginSmall;     
     ol{
       li{
 
@@ -573,6 +664,11 @@ main .content.article{
     }
   }
 
+  // -------------- GABARIT PROGRAMMATION GENERAL --------------
+  // main .content.programmation{
+  //   padding: 0 $marginBig;
+  // }
+
   // -------------- GABARIT SPECTACLE GENERAL --------------
   .switch-page {
     padding: 0 60px;
@@ -581,17 +677,12 @@ main .content.article{
     }
   }
   main .content.spectacle{
-    .right-spectacle{
-      // padding: 0;
+    .spectacle-btn{
+      padding: 50% 30px 0 30px;
     }
-
-    .lien-billeterie, .pdfs-wrapper{
-      display: inline-block;
+    .spectacle-header h2{
+      font-size: 3.8vw;
     }
-    .lien-billeterie{
-      margin-left: $marginBig;
-    }
-
   }
 
   // -------------- GABARIT ARTICLE GENERAL --------------

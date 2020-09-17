@@ -1,19 +1,26 @@
 <?php
-	$now = $site->children()->findBy('intendedTemplate', 'now');
+	$now = $site->index()->findBy('uid', 'spectacles')->children()->first();
+	$next = $now->next();
 ?>
 
-<div class="now-frame hide-for-small-only col-sm-offset-2">
-	<h2><?= $now->title(); ?></h2>
+<div class="now-frame hide-for-small-only">
+	<h2>En ce moment</h2>
 	<ul>
-		<?php foreach ($now->actu()->split() as $actu): ?>
-	  	<?php if($actu = $site->index()->find($actu)):?>
-		  	<li>
-		  		<a href="<?= $actu->url() ?>" title="<?= $actu->title() ?>">
-		  			<?= $actu->title() ?>
-		  		</a>
-		  	</li>
-		  <?php endif; ?>
-	  <?php endforeach ?>
+		<li>
+			<a href="<?= $now->url() ?>" title="<?= $now->title() ?>">
+				<?= $now->title() ?>
+			</a>
+		</li>
+	</ul>
+</div>
+<div class="now-frame hide-for-small-only">
+	<h2>À venir</h2>
+	<ul>
+		<li>
+			<a href="<?= $next->url() ?>" title="<?= $next->title() ?>">
+				<?= $next->title() ?>
+			</a>
+		</li>
 	</ul>
 </div>
 

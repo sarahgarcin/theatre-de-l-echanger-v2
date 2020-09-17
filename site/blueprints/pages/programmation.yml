@@ -49,6 +49,7 @@ columns:
         headline: Publiées
         type: pages
         status: listed
+        sortBy: datesFormatted asc
         templates: 
           - spectacle
           - programmation

@@ -8,7 +8,7 @@
 	<main>
 		<?php snippet('breadcrumb') ?>
 		<div class="content prog-list-wrapper spectacle row">
-			<div class="left-spectacle col-xs-12 <?php e($page->cover()->isNotEmpty(), 'col-sm-5', 'col-sm-3')?>">
+			<div class="left-spectacle col-xs-12 <?php e($page->cover()->isNotEmpty(), 'col-sm-3', 'col-sm-3')?>">
 				<?php if($image = $page->cover()->toFile()):?>
 					<div class="prog-cover-wrapper">
 						<?= $image->thumb([
@@ -17,63 +17,93 @@
 				      'quality' => 120
 				    ])->html();?>
 					</div>
-				<?php endif;?>				
+				<?php endif;?>	
+				<div class="spectacle-btn hide-for-small-only">
+						<?php if($page->billeterie()->isNotEmpty()):?>
+							<div class="lien-billeterie">
+								<a href="<?= $page->billeterie()?>" title="<?= $page->title()?>" target="_blank">
+									Réserver un billet
+								</a>
+							</div>
+						<?php endif;?>
+						<?php if($page->pdfs()->isNotEmpty()):?>
+							<ul class="pdfs-wrapper">
+								<?php foreach($page->pdfs()->toStructure() as $pdf):?>
+									<?php if($file = $pdf->pdf()->toFile()):?>
+										<li>
+											<a href="<?= $file->url() ?>" title="<?= $pdf->title()?>" target="_blank">
+												<?= $pdf->title() ?>
+											</a>
+										</li>
+									<?php endif;?>
+								<?php endforeach;?>
+							</ul>
+						<?php endif;?>
+				</div>		
 			</div>
-			<div class="right-spectacle col-xs-12 col-sm-6">
-				<h4><?= $page->genre()->html()?></h4>
-				<h2><?= $page->title()->html()?></h2>
-				<h4 class="compagnie"><?= $page->compagnie()->html()?></h4>
-				<?php if($dates = $page->datesFormatted()->toStructure()):?>
-					<h3>
-						<?php foreach($dates as $date):?>
-							<?php 
-								$dayStart = $days[$date->start()->toDate('N')-1];
-								$numberStart = $date->start()->toDate('d');
-								$monthStart = $months[$date->start()->toDate('n')-1];
-								$yearStart = $date->start()->toDate('Y');
-								$dayEnd = $days[$date->end()->toDate('N')-1];
-								$numberEnd = $date->end()->toDate('d');
-								$monthEnd = $months[$date->end()->toDate('n')-1];
-								$yearEnd = $date->end()->toDate('Y');
+			<div class="right-spectacle col-xs-12 col-sm-9">
+				<div class="spectacle-header">
+					<h4><?= $page->genre()->html()?></h4>
+					<h2><?= $page->title()->html()?></h2>
+					<h4 class="compagnie"><?= $page->compagnie()->html()?></h4>
+					<?php if($dates = $page->datesFormatted()->toStructure()):?>
+						<h3>
+							<?php foreach($dates as $date):?>
+								<?php 
+									$dayStart = $days[$date->start()->toDate('N')-1];
+									$numberStart = $date->start()->toDate('d');
+									$monthStart = $months[$date->start()->toDate('n')-1];
+									$yearStart = $date->start()->toDate('Y');
+									$dayEnd = $days[$date->end()->toDate('N')-1];
+									$numberEnd = $date->end()->toDate('d');
+									$monthEnd = $months[$date->end()->toDate('n')-1];
+									$yearEnd = $date->end()->toDate('Y');
 
-								$dateStart = $dayStart.' '.$numberStart.' '.$monthStart.' '.$yearStart;
-								$dateEnd = $dayEnd.' '.$numberEnd.' '.$monthEnd.' '.$yearEnd;
-							?>
-							<?php if($dateStart == $dateEnd):?>
-								<?= $dateStart?>
-							<?php else:?>
-								<?= $dateStart?> >> <?= $dateEnd?>
-							<?php endif;?>
-						<?php endforeach?>
-					</h3>
-					<div class="hours"><?= $page->hours()->kt()?></div>
-				<?php endif;?>
-				<div class="distribution"><?= $page->distribution()->kt()?></div>
-				<div class="presentation-text">
-					<?= $page->text()->kt()?>
-				</div>
-				<?php if($page->pdfs()->isNotEmpty()):?>
-					<ul class="pdfs-wrapper">
-						<?php foreach($page->pdfs()->toStructure() as $pdf):?>
-							<?php if($file = $pdf->pdf()->toFile()):?>
-								<li>
-									<a href="<?= $file->url() ?>" title="<?= $pdf->title()?>" target="_blank">
-										<?= $pdf->title() ?>
-									</a>
-								</li>
-							<?php endif;?>
-						<?php endforeach;?>
-					</ul>
-				<?php endif;?>
-				<?php if($page->billeterie()->isNotEmpty()):?>
-					<div class="lien-billeterie">
-						<a href="<?= $page->billeterie()?>" title="<?= $page->title()?>" target="_blank">
-							Réservez un billet
-						</a>
+									$dateStart = $dayStart.' '.$numberStart.' '.$monthStart.' '.$yearStart;
+									$dateEnd = $dayEnd.' '.$numberEnd.' '.$monthEnd.' '.$yearEnd;
+								?>
+								<?php if($dateStart == $dateEnd):?>
+									<?= $dateStart?>
+								<?php else:?>
+									<?= $dateStart?> >> <?= $dateEnd?>
+								<?php endif;?>
+							<?php endforeach?>
+						</h3>
+						<div class="hours"><?= $page->hours()->kt()?></div>
 					</div>
 				<?php endif;?>
-				<div class="credits-text">
-					<?= $page->credits()->kt()?>
+				<div class="row">
+					<div class="content-inner col-xs-12 col-sm-8">
+						<div class="distribution"><?= $page->distribution()->kt()?></div>
+						<div class="presentation-text">
+							<?= $page->text()->kt()?>
+						</div>
+					<div class="spectacle-btn show-for-small-only">
+						<?php if($page->billeterie()->isNotEmpty()):?>
+							<div class="lien-billeterie">
+								<a href="<?= $page->billeterie()?>" title="<?= $page->title()?>" target="_blank">
+									Réserver un billet
+								</a>
+							</div>
+						<?php endif;?>
+						<?php if($page->pdfs()->isNotEmpty()):?>
+							<ul class="pdfs-wrapper">
+								<?php foreach($page->pdfs()->toStructure() as $pdf):?>
+									<?php if($file = $pdf->pdf()->toFile()):?>
+										<li>
+											<a href="<?= $file->url() ?>" title="<?= $pdf->title()?>" target="_blank">
+												<?= $pdf->title() ?>
+											</a>
+										</li>
+									<?php endif;?>
+								<?php endforeach;?>
+							</ul>
+						<?php endif;?>
+				</div>
+						<div class="credits-text">
+							<?= $page->credits()->kt()?>
+						</div>
+					</div>	
 				</div>
 				<?php $related = $page->related()->toPages();
 					if ($related->count() > 0):?>
@@ -105,7 +135,7 @@
 			</div>
 
 
-			<nav class="switch-page">
+			<nav class="switch-page <?php e($page->hasPrev(), 'has-prev','no-prev')?>">
 			<?php if($page->hasPrev()) : ?>
 				<div class="prev-wrapper switch-wrapper">
 			  	<a href="<?= $page->prev()->url() ?>">

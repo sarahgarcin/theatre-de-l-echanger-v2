@@ -30,7 +30,7 @@
 										<?php if($child->billeterie()->isNotEmpty()):?>
 											<div class="lien-billeterie">
 												<a href="<?= $child->billeterie()?>" title="<?= $child->title()?>" target="_blank">
-													Réservez un billet
+													Réserver un billet
 												</a>
 											</div>
 										<?php endif;?>
@@ -59,6 +59,10 @@
 								<div class="prog-infos-wrapper">
 									<h4><?= $child->genre()->html()?></h4>
 									<h2><?= $child->title()->html()?></h2>
+									<h4 class="compagnie"><?= $child->compagnie()->html()?></h4>
+									<div class="distributionsum">
+										<?= $child->distributionsum()->kt() ?>
+									</div>
 									<?php if($dates = $child->datesFormatted()->toStructure()):?>
 										<h3>
 											<?php foreach($dates as $date):?>

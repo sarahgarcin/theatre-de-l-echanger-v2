@@ -41,30 +41,67 @@
 										<h4><?= $child->genre()->html()?></h4>
 										<h2><?= $child->title()->html()?></h2>
 										<h4 class="compagnie"><?= $child->compagnie()->html()?></h4>
-										<?php if($dates = $child->datesFormatted()->toStructure()):?>
-											<h3>
-												<?php foreach($dates as $date):?>
-													<?php 
-														$dayStart = $days[$date->start()->toDate('N')-1];
-														$numberStart = $date->start()->toDate('d');
-														$monthStart = $months[$date->start()->toDate('n')-1];
-														$yearStart = $date->start()->toDate('Y');
-														$dayEnd = $days[$date->end()->toDate('N')-1];
-														$numberEnd = $date->end()->toDate('d');
-														$monthEnd = $months[$date->end()->toDate('n')-1];
-														$yearEnd = $date->end()->toDate('Y');
+										<div class="distributionsum">
+											<?= $child->distributionsum()->kt() ?>
+										</div>
+										<?php if($child->displaydates() == false):?>
+											<?php if($dates = $child->datesFormatted()->toStructure()):?>
+												<h3>
+													<?php foreach($dates as $date):?>
+														<?php 
+															$dayStart = $days[$date->start()->toDate('N')-1];
+															$numberStart = $date->start()->toDate('d');
+															$monthStart = $months[$date->start()->toDate('n')-1];
+															$yearStart = $date->start()->toDate('Y');
+															$dayEnd = $days[$date->end()->toDate('N')-1];
+															$numberEnd = $date->end()->toDate('d');
+															$monthEnd = $months[$date->end()->toDate('n')-1];
+															$yearEnd = $date->end()->toDate('Y');
 
-														$dateStart = $dayStart.' '.$numberStart.' '.$monthStart.' '.$yearStart;
-														$dateEnd = $dayEnd.' '.$numberEnd.' '.$monthEnd.' '.$yearEnd;
-													?>
-													<?php if($dateStart == $dateEnd):?>
-														<?= $dateStart?>
-													<?php else:?>
-														<?= $dateStart?> >> <?= $dateEnd?>
-													<?php endif;?>
-												<?php endforeach?>
-											</h3>
-											<div class="hours"><?= $child->hours()->kt()?></div>
+															$dateStart = $dayStart.' '.$numberStart.' '.$monthStart.' '.$yearStart;
+															$dateEnd = $dayEnd.' '.$numberEnd.' '.$monthEnd.' '.$yearEnd;
+														?>
+														<?php if($dateStart == $dateEnd):?>
+															<?= $dateStart?>
+														<?php else:?>
+															<?= $dateStart?> >> <?= $dateEnd?>
+														<?php endif;?>
+													<?php endforeach?>
+												</h3>
+												<!-- <div class="hours"><?= $child->hours()->kt()?></div> -->
+											<?php endif;?>
+										<?php elseif($child->displaydates() == true):?>
+											<?php if($child->freedates()->isNotEmpty()):?>
+												<div class="freedates">
+													<?= $child->freedates()->kt() ?>
+												</div>
+										<?php else:?>
+											<?php if($dates = $child->datesFormatted()->toStructure()):?>
+												<h3>
+													<?php foreach($dates as $date):?>
+														<?php 
+															$dayStart = $days[$date->start()->toDate('N')-1];
+															$numberStart = $date->start()->toDate('d');
+															$monthStart = $months[$date->start()->toDate('n')-1];
+															$yearStart = $date->start()->toDate('Y');
+															$dayEnd = $days[$date->end()->toDate('N')-1];
+															$numberEnd = $date->end()->toDate('d');
+															$monthEnd = $months[$date->end()->toDate('n')-1];
+															$yearEnd = $date->end()->toDate('Y');
+
+															$dateStart = $dayStart.' '.$numberStart.' '.$monthStart.' '.$yearStart;
+															$dateEnd = $dayEnd.' '.$numberEnd.' '.$monthEnd.' '.$yearEnd;
+														?>
+														<?php if($dateStart == $dateEnd):?>
+															<?= $dateStart?>
+														<?php else:?>
+															<?= $dateStart?> >> <?= $dateEnd?>
+														<?php endif;?>
+													<?php endforeach?>
+												</h3>
+												<!-- <div class="hours"><?= $child->hours()->kt()?></div> -->
+											<?php endif;?>
+										<?php endif;?>
 										<?php endif;?>
 									</div>
 								</a>
