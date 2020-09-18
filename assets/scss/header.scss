@@ -30,6 +30,7 @@ header{
 			li{
 				display: inline-block;
 				margin-right: $marginSmall;
+				font-size: 19px;
 				&:after{
 					content: "///";
 					margin-left: $marginSmall;
@@ -95,14 +96,14 @@ header{
 	.main-nav{
 		margin-top: $marginSmall;
 		margin-bottom: $marginNormal;
-		padding:$marginNormal 40px;
+		padding:$marginBig $marginNormal;
 		position: absolute; 
 		background: $mainColor; 
 		top: 33px;
 		right: -440px; 
 		transition: all 0.8s ease-in-out; 
 		&.active{
-			right: -$marginSmall;
+			right: -$marginNormal;
 		}
 		li{
 			list-style: none;
@@ -134,10 +135,11 @@ header{
 		}
 		.nav{
 			right: $marginBig;
-			width: 400px;
+			// width: 400px;
 		}
 		.main-nav{
 			top: 45px;
+			padding: $marginBig;
 			&.active{
 				right: -$marginBig;
 			}

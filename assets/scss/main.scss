@@ -41,7 +41,8 @@
     }
   }
   p{
-    font-size: $textSize; 
+    // font-size: $textSize;
+     @include fluid-type(320px, 1200px, 18px, 21px); 
     &:last-child{
       margin-bottom:0;
     }
@@ -165,11 +166,16 @@
       position: relative;
       padding: 0;
       min-height: calc(100vh - 210px);
+      width:100%;
+      &.row{
+        margin:0;
+      }
       .content-inner{
         // padding: 0;
         h1{
           font-family: $titleFont;
-          font-size: 2em;
+          // font-size: 2em;
+          @include fluid-type(320px, 1200px, 32px, 40px);
           margin-bottom:0;
         }
         h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
@@ -177,20 +183,22 @@
         }
         h2{
           font-family: $titleFont;
-          font-size: 1.5em;
+          // font-size: 1.5em;
+          @include fluid-type(320px, 1200px, 25px, 32px);
           margin-bottom:0;
           margin-top: $marginBig;
         }
         h3{
           font-family: $titleFont;
-          font-size: 1.2em;
+          // font-size: 1.2em;
+          @include fluid-type(320px, 1200px, 20px, 27px);
           margin-bottom:0;
           margin-top: $marginBig;
         }
         h4{
           font-family: $subtitleFont;
           margin-bottom:0;
-          font-size: 1.7em;
+          @include fluid-type(320px, 1200px, 32px, 35px);
           margin-top: $marginBig;
           font-weight: normal;
           letter-spacing: 0.03em;
@@ -198,7 +206,7 @@
         h5{
           font-family: $subtitleFont;
           margin-bottom:0;
-          font-size: 1.4em;
+          @include fluid-type(320px, 1200px, 25px, 30px);
           margin-top: $marginBig;
           font-weight: normal;
           color: $gris;
@@ -207,7 +215,7 @@
         h6{
           font-family: $subtitleFont;
           margin-bottom:0;
-          font-size: 1.2em;
+          @include fluid-type(320px, 1200px, 22px, 25px);
           margin-top: $marginBig;
           font-weight: normal;
           color: $gris;
@@ -236,16 +244,15 @@
     padding: $marginNormal $marginNormal $marginSmall; 
     position: absolute;
     z-index:2;
-    width:100%;
     ol{
       display: flex;
       flex-wrap: wrap; 
       li{
-        margin-left: $marginSmall;
-        font-size: $menuSize; 
+        margin-left: 5px;
+        font-size: 15px; 
         &:before{
           content: '>>';
-          margin-right: $marginSmall;
+          margin-right: 5px;
         }
         &:first-child{
           margin-left: 0;
@@ -268,7 +275,7 @@
       width:100%;
     }
     & > ul > li{
-      padding: $marginBig;
+      padding: $marginSmall;
     }
     h2{
       font-size: $titleSize;
@@ -348,11 +355,11 @@
     }
     p, a{
       margin:0;
-      font-size: $smallText;
+      font-size: 14px;
 
     }
     .mentions-legales a{
-      font-size: 13px;
+      font-size: 12px;
       &:hover{
         text-decoration: underline;
       }
@@ -360,8 +367,7 @@
     .socialnetworks{
       text-align: left;
       font-family: $subtitleFont;
-      margin-top: $marginNormal;
-      font-size: 25px;
+      margin-top: $marginSmall;
       ul{
         display: flex;
         justify-content: flex-start;
@@ -369,6 +375,7 @@
            color: $gris;
            transition: all 0.5s ease-in-out;
            margin-right: $marginSmall;
+           font-size: 18px;
            &:hover{
             color: #000;
            }
@@ -382,10 +389,12 @@
   ul{
     flex-direction: column;
     flex: 1;
-    height: calc(100vh - 210px);
+    margin:0;
+    // height: calc(100vh - 210px);
   }
   li{
     height: auto;
+    height: 150px;
     // height: 15vh;
     background-size: cover;
     background-repeat: no-repeat;
@@ -401,6 +410,7 @@
       display:block;
       background-color: rgba(255, 255, 255, 0.1);
       transition: all 0.5s ease-in-out;
+      line-height: 1.1;
       .yellow-pattern{
         width: 100%;
         mix-blend-mode: multiply; 
@@ -447,7 +457,7 @@
 // -------------- GABARIT SPECTACLE GENERAL --------------
 .switch-page{
   width: 100%;
-  padding: 0 40px;
+  padding: 0 $marginSmall;
   display: flex; 
   justify-content: space-between;
   align-items: center;
@@ -460,7 +470,9 @@
 
 .switch-page .switch-wrapper{
   width: 45%;
-  min-width: 200px;
+  min-width: 100px;
+  font-size: $menuSize;
+  text-transform: uppercase;
   a{
     display: flex;
     align-items: center;
@@ -479,25 +491,26 @@
     text-align: right
   }
   .switch-arrow{
-    font-size: 30px;
-    margin-top: -5px;
+    font-size: 20px;
+    margin-top: 0px;
     &.arrow-prev{
       margin-right: 10px;
     }
     &.arrow-next{
       margin-left: 10px;
-    }
+    } 
   }
 }
 
 main .content.spectacle{
-  padding: $marginBig 0;
+  padding: 80px 0;
   .spectacle-header h2{
-    font-size: 30px;
+    // font-size: 30px;
+    @include fluid-type(320px, 1200px, 35px, 52px);
     margin-top: 0;
   }
   .right-spectacle{
-    padding: $marginBig;
+    padding: $marginSmall $marginNormal;
   }
 
   .prog-cover-wrapper + .spectacle-btn{
@@ -538,8 +551,12 @@ main .content.spectacle{
 // -------------- GABARIT PROGRAMMATION GENERAL --------------
 
 main .content.programmation{
-  padding: $marginBig;
+  // padding: $marginBig;
+  padding: 60px $marginSmall;
   position: relative;
+  width:100%;
+  margin: 0;
+  .row{margin:0;}
   .archives-btn + h1{
     margin-top: $marginNormal;
   }
@@ -547,7 +564,7 @@ main .content.programmation{
     width: 100%;
     text-align: center; 
     margin-top: $marginNormal;
-    margin-bottom: 0px;
+    margin-bottom: $marginBig;
   }
   h2{
     font-size: 30px;
@@ -559,7 +576,7 @@ main .content.programmation{
     // left: 18px; 
     text-align: center;
     margin: auto;
-    margin-top: $marginNormal ;
+    margin-top: $marginNormal;
     // position: absolute; 
     a{
       background: $mainColor;
@@ -576,7 +593,7 @@ main .content.programmation{
 // -------------- GABARIT ARTICLE GENERAL --------------
 
 main .content.article{
-  padding: $marginBig $marginNormal;
+  padding: $marginBig*2 0;
   margin-bottom: $marginBig*2;
   a{
     text-decoration: underline; 
@@ -585,15 +602,15 @@ main .content.article{
       background-color: $mainColor;
     }
   }
-  h3{
-    // background: $mainColor;
-    margin-top: $marginBig;
-    // padding-left: 3px;
-    font-family: $titleFont;
-  }
-  h3+p{
-    margin-top:0;
-  }
+  // h3{
+  //   // background: $mainColor;
+  //   margin-top: $marginBig;
+  //   // padding-left: 3px;
+  //   font-family: $titleFont;
+  // }
+  // h3+p{
+  //   margin-top:0;
+  // }
   .left-col{
     & > figure{
       margin-top: 0;
@@ -610,16 +627,16 @@ main .content.article{
     }
   }
   // h1{margin-top:0;}
-  h2{
-    font-family: $subtitleFont;
-    font-weight: normal;
-    font-size: 30px; 
-    margin-bottom: 0;
-    margin-top: $marginBig;
-  }
-  h2+p{
-    margin-top: $marginSmall;
-  }
+  // h2{
+  //   font-family: $subtitleFont;
+  //   font-weight: normal;
+  //   font-size: 30px; 
+  //   margin-bottom: 0;
+  //   margin-top: $marginBig;
+  // }
+  // h2+p{
+  //   margin-top: $marginSmall;
+  // }
 }
 
 
@@ -636,6 +653,10 @@ main .content.article{
     padding: 85px 0 0 0; 
     .content{
       padding: 0; 
+      &.row{
+        margin-right: -1rem;
+        margin-left: -1rem;
+      }
     }
   }
 
@@ -665,23 +686,39 @@ main .content.article{
   }
 
   // -------------- GABARIT PROGRAMMATION GENERAL --------------
-  // main .content.programmation{
-  //   padding: 0 $marginBig;
-  // }
+  main .content.programmation{
+    padding: $marginBig;
+  }
+
+  .prog-list-wrapper{
+    padding: 0 $marginBig;
+    & > ul > li{
+      padding: $marginBig;
+    }
+  }
 
   // -------------- GABARIT SPECTACLE GENERAL --------------
   .switch-page {
     padding: 0 60px;
     .switch-wrapper{
-      width: 20%;
+      width: 50%;
     }
   }
   main .content.spectacle{
+    padding: $marginBig 0;
+    margin:0;
+    .right-spectacle{
+      padding: $marginBig;
+    }
+    .left-spectacle{
+      padding-top: $marginNormal;
+      padding-left: 1rem;
+    }
     .spectacle-btn{
-      padding: 50% 30px 0 30px;
+      padding: 0 30px 0 30px;
     }
     .spectacle-header h2{
-      font-size: 3.8vw;
+      // font-size: 3.8vw;
     }
   }
 
@@ -697,7 +734,10 @@ main .content.article{
   }
 
   footer{ 
-    padding: $marginNormal $marginBig;
+    padding: $marginSmall $marginBig;
+    p, a{
+      font-size: 0.75em;  
+    }
     .socialnetworks{
       text-align: right;
       margin-top: 0;

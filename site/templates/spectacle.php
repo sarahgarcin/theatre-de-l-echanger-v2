@@ -17,29 +17,31 @@
 				      'quality' => 120
 				    ])->html();?>
 					</div>
+				<?php endif;?>
+				<?php if($page->cover()->isNotEmpty()):?>	
+					<div class="spectacle-btn hide-for-small-only">
+							<?php if($page->billeterie()->isNotEmpty()):?>
+								<div class="lien-billeterie">
+									<a href="<?= $page->billeterie()?>" title="<?= $page->title()?>" target="_blank">
+										Réserver un billet
+									</a>
+								</div>
+							<?php endif;?>
+							<?php if($page->pdfs()->isNotEmpty()):?>
+								<ul class="pdfs-wrapper">
+									<?php foreach($page->pdfs()->toStructure() as $pdf):?>
+										<?php if($file = $pdf->pdf()->toFile()):?>
+											<li>
+												<a href="<?= $file->url() ?>" title="<?= $pdf->title()?>" target="_blank">
+													<?= $pdf->title() ?>
+												</a>
+											</li>
+										<?php endif;?>
+									<?php endforeach;?>
+								</ul>
+							<?php endif;?>
+					</div>	
 				<?php endif;?>	
-				<div class="spectacle-btn hide-for-small-only">
-						<?php if($page->billeterie()->isNotEmpty()):?>
-							<div class="lien-billeterie">
-								<a href="<?= $page->billeterie()?>" title="<?= $page->title()?>" target="_blank">
-									Réserver un billet
-								</a>
-							</div>
-						<?php endif;?>
-						<?php if($page->pdfs()->isNotEmpty()):?>
-							<ul class="pdfs-wrapper">
-								<?php foreach($page->pdfs()->toStructure() as $pdf):?>
-									<?php if($file = $pdf->pdf()->toFile()):?>
-										<li>
-											<a href="<?= $file->url() ?>" title="<?= $pdf->title()?>" target="_blank">
-												<?= $pdf->title() ?>
-											</a>
-										</li>
-									<?php endif;?>
-								<?php endforeach;?>
-							</ul>
-						<?php endif;?>
-				</div>		
 			</div>
 			<div class="right-spectacle col-xs-12 col-sm-9">
 				<div class="spectacle-header">
@@ -78,6 +80,7 @@
 						<div class="presentation-text">
 							<?= $page->text()->kt()?>
 						</div>
+					<!-- boutons pour téléphone -->
 					<div class="spectacle-btn show-for-small-only">
 						<?php if($page->billeterie()->isNotEmpty()):?>
 							<div class="lien-billeterie">
@@ -99,7 +102,32 @@
 								<?php endforeach;?>
 							</ul>
 						<?php endif;?>
-				</div>
+					</div>
+					<!-- boutons quand il n'y a pas d'image -->
+					<?php if($page->cover()->isEmpty()):?>	
+						<div class="spectacle-btn hide-for-small-only">
+								<?php if($page->billeterie()->isNotEmpty()):?>
+									<div class="lien-billeterie">
+										<a href="<?= $page->billeterie()?>" title="<?= $page->title()?>" target="_blank">
+											Réserver un billet
+										</a>
+									</div>
+								<?php endif;?>
+								<?php if($page->pdfs()->isNotEmpty()):?>
+									<ul class="pdfs-wrapper">
+										<?php foreach($page->pdfs()->toStructure() as $pdf):?>
+											<?php if($file = $pdf->pdf()->toFile()):?>
+												<li>
+													<a href="<?= $file->url() ?>" title="<?= $pdf->title()?>" target="_blank">
+														<?= $pdf->title() ?>
+													</a>
+												</li>
+											<?php endif;?>
+										<?php endforeach;?>
+									</ul>
+								<?php endif;?>
+						</div>	
+					<?php endif;?>
 						<div class="credits-text">
 							<?= $page->credits()->kt()?>
 						</div>
@@ -107,7 +135,7 @@
 				</div>
 				<?php $related = $page->related()->toPages();
 					if ($related->count() > 0):?>
-						<div class="related">
+						<div class="related col-xs-12 col-sm-8">
 						<?php if($page->relatedtitle()->isNotEmpty()):?>
 							<h3><?= $page->relatedtitle()->html()?></h3>
 						<?php endif;?>

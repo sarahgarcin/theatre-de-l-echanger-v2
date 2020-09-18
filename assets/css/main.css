@@ -51,9 +51,16 @@ figcaption {
     display: inline-block; }
 
 p {
-  font-size: 19px; }
-  p:last-child {
-    margin-bottom: 0; }
+  font-size: 18px; }
+  @media screen and (min-width: 320px) {
+    p {
+      font-size: calc(18px + 3 * ((100vw - 320px) / 880)); } }
+  @media screen and (min-width: 1200px) {
+    p {
+      font-size: 21px; } }
+
+p:last-child {
+  margin-bottom: 0; }
 
 h1 {
   font-size: 3rem;
@@ -156,7 +163,8 @@ header {
       margin: 0; }
       header .now-frame ul li {
         display: inline-block;
-        margin-right: 10px; }
+        margin-right: 10px;
+        font-size: 19px; }
         header .now-frame ul li:after {
           content: "///";
           margin-left: 10px; }
@@ -222,7 +230,7 @@ header {
   header .main-nav {
     margin-top: 10px;
     margin-bottom: 20px;
-    padding: 20px 40px;
+    padding: 40px 20px;
     position: absolute;
     background: #fff200;
     top: 33px;
@@ -231,7 +239,7 @@ header {
     -o-transition: all 0.8s ease-in-out;
     transition: all 0.8s ease-in-out; }
     header .main-nav.active {
-      right: -10px; }
+      right: -20px; }
     header .main-nav li {
       list-style: none;
       margin-bottom: 20px;
@@ -248,10 +256,10 @@ header {
     padding: 0 40px;
     width: 300px; }
   header .nav {
-    right: 40px;
-    width: 400px; }
+    right: 40px; }
   header .main-nav {
-    top: 45px; }
+    top: 45px;
+    padding: 40px; }
     header .main-nav.active {
       right: -40px; } }
 
@@ -274,46 +282,91 @@ main {
   main .content {
     position: relative;
     padding: 0;
-    min-height: calc(100vh - 210px); }
+    min-height: calc(100vh - 210px);
+    width: 100%; }
+    main .content.row {
+      margin: 0; }
     main .content .content-inner h1 {
       font-family: "LMDLD", sans-serif;
-      font-size: 2em;
       margin-bottom: 0; }
+      main .content .content-inner h1 {
+        font-size: 32px; }
+        @media screen and (min-width: 320px) {
+          main .content .content-inner h1 {
+            font-size: calc(32px + 8 * ((100vw - 320px) / 880)); } }
+        @media screen and (min-width: 1200px) {
+          main .content .content-inner h1 {
+            font-size: 40px; } }
     main .content .content-inner h1 + p, main .content .content-inner h2 + p, main .content .content-inner h3 + p, main .content .content-inner h4 + p, main .content .content-inner h5 + p, main .content .content-inner h6 + p {
       margin-top: 0; }
     main .content .content-inner h2 {
       font-family: "LMDLD", sans-serif;
-      font-size: 1.5em;
       margin-bottom: 0;
       margin-top: 40px; }
+      main .content .content-inner h2 {
+        font-size: 25px; }
+        @media screen and (min-width: 320px) {
+          main .content .content-inner h2 {
+            font-size: calc(25px + 7 * ((100vw - 320px) / 880)); } }
+        @media screen and (min-width: 1200px) {
+          main .content .content-inner h2 {
+            font-size: 32px; } }
     main .content .content-inner h3 {
       font-family: "LMDLD", sans-serif;
-      font-size: 1.2em;
       margin-bottom: 0;
       margin-top: 40px; }
+      main .content .content-inner h3 {
+        font-size: 20px; }
+        @media screen and (min-width: 320px) {
+          main .content .content-inner h3 {
+            font-size: calc(20px + 7 * ((100vw - 320px) / 880)); } }
+        @media screen and (min-width: 1200px) {
+          main .content .content-inner h3 {
+            font-size: 27px; } }
     main .content .content-inner h4 {
       font-family: "Bebas", sans-serif;
       margin-bottom: 0;
-      font-size: 1.7em;
       margin-top: 40px;
       font-weight: normal;
       letter-spacing: 0.03em; }
+      main .content .content-inner h4 {
+        font-size: 32px; }
+        @media screen and (min-width: 320px) {
+          main .content .content-inner h4 {
+            font-size: calc(32px + 3 * ((100vw - 320px) / 880)); } }
+        @media screen and (min-width: 1200px) {
+          main .content .content-inner h4 {
+            font-size: 35px; } }
     main .content .content-inner h5 {
       font-family: "Bebas", sans-serif;
       margin-bottom: 0;
-      font-size: 1.4em;
       margin-top: 40px;
       font-weight: normal;
       color: #3F3F3F;
       letter-spacing: 0.03em; }
+      main .content .content-inner h5 {
+        font-size: 25px; }
+        @media screen and (min-width: 320px) {
+          main .content .content-inner h5 {
+            font-size: calc(25px + 5 * ((100vw - 320px) / 880)); } }
+        @media screen and (min-width: 1200px) {
+          main .content .content-inner h5 {
+            font-size: 30px; } }
     main .content .content-inner h6 {
       font-family: "Bebas", sans-serif;
       margin-bottom: 0;
-      font-size: 1.2em;
       margin-top: 40px;
       font-weight: normal;
       color: #3F3F3F;
       letter-spacing: 0.03em; }
+      main .content .content-inner h6 {
+        font-size: 22px; }
+        @media screen and (min-width: 320px) {
+          main .content .content-inner h6 {
+            font-size: calc(22px + 3 * ((100vw - 320px) / 880)); } }
+        @media screen and (min-width: 1200px) {
+          main .content .content-inner h6 {
+            font-size: 25px; } }
     main .content figure {
       margin: 20px 0; }
     main .content ol {
@@ -326,8 +379,7 @@ main {
 .breadcrumb {
   padding: 20px 20px 10px;
   position: absolute;
-  z-index: 2;
-  width: 100%; }
+  z-index: 2; }
   .breadcrumb ol {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -335,11 +387,11 @@ main {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap; }
     .breadcrumb ol li {
-      margin-left: 10px;
-      font-size: 16px; }
+      margin-left: 5px;
+      font-size: 15px; }
       .breadcrumb ol li:before {
         content: '>>';
-        margin-right: 10px; }
+        margin-right: 5px; }
       .breadcrumb ol li:first-child {
         margin-left: 0; }
         .breadcrumb ol li:first-child:before {
@@ -353,7 +405,7 @@ main {
   .prog-list-wrapper > ul {
     width: 100%; }
   .prog-list-wrapper > ul > li {
-    padding: 40px; }
+    padding: 10px; }
   .prog-list-wrapper h2 {
     font-size: 2em; }
   .prog-list-wrapper h3 {
@@ -413,16 +465,15 @@ footer {
     color: #000; }
   footer p, footer a {
     margin: 0;
-    font-size: 0.8em; }
+    font-size: 14px; }
   footer .mentions-legales a {
-    font-size: 13px; }
+    font-size: 12px; }
     footer .mentions-legales a:hover {
       text-decoration: underline; }
   footer .socialnetworks {
     text-align: left;
     font-family: "Bebas", sans-serif;
-    margin-top: 20px;
-    font-size: 25px; }
+    margin-top: 10px; }
     footer .socialnetworks ul {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -435,7 +486,8 @@ footer {
         -webkit-transition: all 0.5s ease-in-out;
         -o-transition: all 0.5s ease-in-out;
         transition: all 0.5s ease-in-out;
-        margin-right: 10px; }
+        margin-right: 10px;
+        font-size: 18px; }
         footer .socialnetworks ul li a:hover {
           color: #000; }
 
@@ -447,10 +499,11 @@ footer {
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  height: calc(100vh - 210px); }
+  margin: 0; }
 
 .big-menu li {
   height: auto;
+  height: 150px;
   background-size: cover;
   background-repeat: no-repeat;
   background-blend-mode: saturation;
@@ -465,7 +518,8 @@ footer {
     background-color: rgba(255, 255, 255, 0.1);
     -webkit-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out; }
+    transition: all 0.5s ease-in-out;
+    line-height: 1.1; }
     .big-menu li a .yellow-pattern {
       width: 100%;
       mix-blend-mode: multiply;
@@ -504,7 +558,7 @@ footer {
 
 .switch-page {
   width: 100%;
-  padding: 0 40px;
+  padding: 0 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -522,7 +576,9 @@ footer {
 
 .switch-page .switch-wrapper {
   width: 45%;
-  min-width: 200px; }
+  min-width: 100px;
+  font-size: 16px;
+  text-transform: uppercase; }
   .switch-page .switch-wrapper a {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -539,20 +595,27 @@ footer {
   .switch-page .switch-wrapper .text-next {
     text-align: right; }
   .switch-page .switch-wrapper .switch-arrow {
-    font-size: 30px;
-    margin-top: -5px; }
+    font-size: 20px;
+    margin-top: 0px; }
     .switch-page .switch-wrapper .switch-arrow.arrow-prev {
       margin-right: 10px; }
     .switch-page .switch-wrapper .switch-arrow.arrow-next {
       margin-left: 10px; }
 
 main .content.spectacle {
-  padding: 40px 0; }
+  padding: 80px 0; }
   main .content.spectacle .spectacle-header h2 {
-    font-size: 30px;
     margin-top: 0; }
+    main .content.spectacle .spectacle-header h2 {
+      font-size: 35px; }
+      @media screen and (min-width: 320px) {
+        main .content.spectacle .spectacle-header h2 {
+          font-size: calc(35px + 17 * ((100vw - 320px) / 880)); } }
+      @media screen and (min-width: 1200px) {
+        main .content.spectacle .spectacle-header h2 {
+          font-size: 52px; } }
   main .content.spectacle .right-spectacle {
-    padding: 40px; }
+    padding: 10px 20px; }
   main .content.spectacle .prog-cover-wrapper + .spectacle-btn {
     padding-top: 0; }
   main .content.spectacle .spectacle-btn {
@@ -575,15 +638,19 @@ main .content.spectacle {
       margin: 0; }
 
 main .content.programmation {
-  padding: 40px;
-  position: relative; }
+  padding: 60px 10px;
+  position: relative;
+  width: 100%;
+  margin: 0; }
+  main .content.programmation .row {
+    margin: 0; }
   main .content.programmation .archives-btn + h1 {
     margin-top: 20px; }
   main .content.programmation h1 {
     width: 100%;
     text-align: center;
     margin-top: 20px;
-    margin-bottom: 0px; }
+    margin-bottom: 40px; }
   main .content.programmation h2 {
     font-size: 30px; }
   main .content.programmation .archives-btn {
@@ -598,7 +665,7 @@ main .content.programmation {
       color: #3F3F3F; }
 
 main .content.article {
-  padding: 40px 20px;
+  padding: 80px 0;
   margin-bottom: 80px; }
   main .content.article a {
     text-decoration: underline;
@@ -606,11 +673,6 @@ main .content.article {
     text-decoration-color: #fff200; }
     main .content.article a:hover {
       background-color: #fff200; }
-  main .content.article h3 {
-    margin-top: 40px;
-    font-family: "LMDLD", sans-serif; }
-  main .content.article h3 + p {
-    margin-top: 0; }
   main .content.article .left-col > figure {
     margin-top: 0; }
   main .content.article .right-col {
@@ -620,14 +682,6 @@ main .content.article {
       main .content.article .right-col ul li {
         list-style: disc;
         margin-bottom: 10px; }
-  main .content.article h2 {
-    font-family: "Bebas", sans-serif;
-    font-weight: normal;
-    font-size: 30px;
-    margin-bottom: 0;
-    margin-top: 40px; }
-  main .content.article h2 + p {
-    margin-top: 10px; }
 
 @media only screen and (min-width: 48em) {
   .show-for-small-only {
@@ -638,6 +692,9 @@ main .content.article {
     padding: 85px 0 0 0; }
     main .content {
       padding: 0; }
+      main .content.row {
+        margin-right: -1rem;
+        margin-left: -1rem; }
   .breadcrumb {
     padding: 20px 40px 10px; }
   .big-menu ul {
@@ -651,14 +708,26 @@ main .content.article {
       height: calc(100vh - 210px); }
       .big-menu li a .yellow-pattern {
         height: calc(100vh - 210px); }
+  main .content.programmation {
+    padding: 40px; }
+  .prog-list-wrapper {
+    padding: 0 40px; }
+    .prog-list-wrapper > ul > li {
+      padding: 40px; }
   .switch-page {
     padding: 0 60px; }
     .switch-page .switch-wrapper {
-      width: 20%; }
-  main .content.spectacle .spectacle-btn {
-    padding: 50% 30px 0 30px; }
-  main .content.spectacle .spectacle-header h2 {
-    font-size: 3.8vw; }
+      width: 50%; }
+  main .content.spectacle {
+    padding: 40px 0;
+    margin: 0; }
+    main .content.spectacle .right-spectacle {
+      padding: 40px; }
+    main .content.spectacle .left-spectacle {
+      padding-top: 20px;
+      padding-left: 1rem; }
+    main .content.spectacle .spectacle-btn {
+      padding: 0 30px 0 30px; }
   main .content.article {
     padding: 80px 40px; }
     main .content.article .left-col {
@@ -666,7 +735,9 @@ main .content.article {
     main .content.article .right-col {
       padding-left: 20px; }
   footer {
-    padding: 20px 40px; }
+    padding: 10px 40px; }
+    footer p, footer a {
+      font-size: 0.75em; }
     footer .socialnetworks {
       text-align: right;
       margin-top: 0; }

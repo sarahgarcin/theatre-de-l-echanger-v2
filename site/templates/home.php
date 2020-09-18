@@ -20,7 +20,7 @@
 					<?php endif;?>
 						<a href="<?= $child->url()?>" title="<?= $child->title()?>">
 							<?php if($coveryellow = $child->coveryellow()->toFile()):?> 
-								<div class="yellow-pattern">
+								<div class="yellow-pattern hide-for-small-only">
 									<img src="<?= $coveryellow->url()?>" alt="">
 								</div>
 							<?php endif;?>

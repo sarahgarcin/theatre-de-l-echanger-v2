@@ -41,7 +41,7 @@
 					<?= $page->infos()->kt()?>
 				</div>
 			</div>
-			<div class="right-col col-xs-12 col-sm-6">
+			<div class="right-col col-xs-12 col-sm-7">
 				<h1><?= $page->title()->html()?></h1>
 				<div class="content-inner">
 					<?= $page->text()->kt()?>
