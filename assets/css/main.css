@@ -152,6 +152,8 @@ header {
   header .logo {
     padding: 0 20px;
     width: 220px; }
+    header .logo a {
+      max-height: 85px; }
   header .now-frame {
     border-left: 5px solid #3F3F3F;
     padding: 0px 10px; }
@@ -288,7 +290,8 @@ main {
       margin: 0; }
     main .content .content-inner h1 {
       font-family: "LMDLD", sans-serif;
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      color: #3F3F3F; }
       main .content .content-inner h1 {
         font-size: 32px; }
         @media screen and (min-width: 320px) {
@@ -302,7 +305,8 @@ main {
     main .content .content-inner h2 {
       font-family: "LMDLD", sans-serif;
       margin-bottom: 0;
-      margin-top: 40px; }
+      margin-top: 40px;
+      color: #3F3F3F; }
       main .content .content-inner h2 {
         font-size: 25px; }
         @media screen and (min-width: 320px) {
@@ -314,7 +318,8 @@ main {
     main .content .content-inner h3 {
       font-family: "LMDLD", sans-serif;
       margin-bottom: 0;
-      margin-top: 40px; }
+      margin-top: 40px;
+      color: #3F3F3F; }
       main .content .content-inner h3 {
         font-size: 20px; }
         @media screen and (min-width: 320px) {
@@ -328,7 +333,8 @@ main {
       margin-bottom: 0;
       margin-top: 40px;
       font-weight: normal;
-      letter-spacing: 0.03em; }
+      letter-spacing: 0.03em;
+      color: #3F3F3F; }
       main .content .content-inner h4 {
         font-size: 32px; }
         @media screen and (min-width: 320px) {
@@ -343,7 +349,8 @@ main {
       margin-top: 40px;
       font-weight: normal;
       color: #3F3F3F;
-      letter-spacing: 0.03em; }
+      letter-spacing: 0.03em;
+      color: #3F3F3F; }
       main .content .content-inner h5 {
         font-size: 25px; }
         @media screen and (min-width: 320px) {
@@ -358,7 +365,8 @@ main {
       margin-top: 40px;
       font-weight: normal;
       color: #3F3F3F;
-      letter-spacing: 0.03em; }
+      letter-spacing: 0.03em;
+      color: #3F3F3F; }
       main .content .content-inner h6 {
         font-size: 22px; }
         @media screen and (min-width: 320px) {
@@ -385,18 +393,18 @@ main {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    -webkit-box-align: baseline;
+    -ms-flex-align: baseline;
+    align-items: baseline; }
     .breadcrumb ol li {
       margin-left: 5px;
       font-size: 15px; }
       .breadcrumb ol li:before {
         content: '>>';
         margin-right: 5px; }
-      .breadcrumb ol li:first-child {
-        margin-left: 0; }
-        .breadcrumb ol li:first-child:before {
-          content: '';
-          margin-right: 0; }
+      .breadcrumb ol li:first-child:before {
+        content: none; }
       .breadcrumb ol li a:hover {
         background: #fff200; }
 
@@ -405,7 +413,7 @@ main {
   .prog-list-wrapper > ul {
     width: 100%; }
   .prog-list-wrapper > ul > li {
-    padding: 10px; }
+    padding: 10px 10px 80px 10px; }
   .prog-list-wrapper h2 {
     font-size: 2em; }
   .prog-list-wrapper h3 {
@@ -514,6 +522,7 @@ footer {
   cursor: pointer; }
   .big-menu li a {
     height: 100%;
+    height: 150px;
     display: block;
     background-color: rgba(255, 255, 255, 0.1);
     -webkit-transition: all 0.5s ease-in-out;

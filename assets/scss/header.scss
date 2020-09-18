@@ -16,6 +16,9 @@ header{
 	.logo{
 		padding: 0 $marginNormal;
 		width: 220px;
+		a{
+			max-height: 85px;
+		}
 	}
 	.now-frame{
 		border-left: 5px solid $gris;

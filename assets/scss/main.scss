@@ -177,6 +177,7 @@
           // font-size: 2em;
           @include fluid-type(320px, 1200px, 32px, 40px);
           margin-bottom:0;
+          color: $gris;
         }
         h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
           margin-top: 0;
@@ -187,6 +188,7 @@
           @include fluid-type(320px, 1200px, 25px, 32px);
           margin-bottom:0;
           margin-top: $marginBig;
+          color: $gris;
         }
         h3{
           font-family: $titleFont;
@@ -194,6 +196,7 @@
           @include fluid-type(320px, 1200px, 20px, 27px);
           margin-bottom:0;
           margin-top: $marginBig;
+          color: $gris;
         }
         h4{
           font-family: $subtitleFont;
@@ -202,6 +205,7 @@
           margin-top: $marginBig;
           font-weight: normal;
           letter-spacing: 0.03em;
+          color: $gris;
         }
         h5{
           font-family: $subtitleFont;
@@ -211,6 +215,7 @@
           font-weight: normal;
           color: $gris;
           letter-spacing: 0.03em;
+          color: $gris;
         }
         h6{
           font-family: $subtitleFont;
@@ -220,6 +225,7 @@
           font-weight: normal;
           color: $gris;
           letter-spacing: 0.03em;
+          color: $gris;
         }
       }
 
@@ -247,6 +253,9 @@
     ol{
       display: flex;
       flex-wrap: wrap; 
+      align-items: baseline;
+
+
       li{
         margin-left: 5px;
         font-size: 15px; 
@@ -255,10 +264,10 @@
           margin-right: 5px;
         }
         &:first-child{
-          margin-left: 0;
+          // margin-left: 0;
           &:before{
-            content: '';
-            margin-right: 0;
+            content: none;
+            // margin-right: 0;
           } 
         }
         a:hover{
@@ -275,7 +284,7 @@
       width:100%;
     }
     & > ul > li{
-      padding: $marginSmall;
+      padding: $marginSmall  $marginSmall  $marginBig*2  $marginSmall;
     }
     h2{
       font-size: $titleSize;
@@ -406,6 +415,7 @@
     cursor: pointer; 
     a{
        height: 100%;
+       height: 150px;
       // height: 15vh;
       display:block;
       background-color: rgba(255, 255, 255, 0.1);
