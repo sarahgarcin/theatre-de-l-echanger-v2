@@ -532,6 +532,10 @@ main .content.spectacle{
     text-align: center; 
   }
 
+  .spectacle-btn + .credits-text{
+    margin-top: $marginBig;
+  }
+
   .lien-billeterie{
     margin-left: 0;
     background-color: $mainColor;

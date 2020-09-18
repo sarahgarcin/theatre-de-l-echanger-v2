@@ -630,6 +630,8 @@ main .content.spectacle {
   main .content.spectacle .spectacle-btn {
     padding: 0 20px 40px 20px;
     text-align: center; }
+  main .content.spectacle .spectacle-btn + .credits-text {
+    margin-top: 40px; }
   main .content.spectacle .lien-billeterie {
     margin-left: 0;
     background-color: #fff200; }
