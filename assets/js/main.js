@@ -5,6 +5,15 @@ $(document).ready(function(){
 
 function init(){
 
+	// message pop-up
+	$('.home-message').on('click', function(){
+		$('.home-message').hide();
+	});
+
+	$('.close-message').on('click', function(){
+		$('.home-message').hide();
+	});
+
 	// -------------- OPEN MENU --------------- //
 	var menuBtn = $('.menu_btn');
 	var nav = $('.main-nav');

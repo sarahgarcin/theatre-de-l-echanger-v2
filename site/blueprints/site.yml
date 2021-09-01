@@ -25,6 +25,10 @@ tabs:
             size: small
       - width: 1/2
         fields:
+          submenu: 
+            label: Pages à afficher dans le petit menu
+            type: pages
+            query: site.children
           logo: 
             label: Logo du site
             type: files

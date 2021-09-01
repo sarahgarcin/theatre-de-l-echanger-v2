@@ -15,6 +15,6 @@
 		      </li>
 			<?php endforeach; ?>
 		</ul>
-
+		<?php snippet('smallmenu')?>
 	</nav>
 </div>

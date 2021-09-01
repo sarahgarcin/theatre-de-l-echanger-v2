@@ -28,6 +28,10 @@ columns:
             multiple: false
             width: 1/2
             help: Choisir une image png avec les motifs jaune
+          archivesdates: 
+            label: Date de la saison
+            type: text
+            help: Remplir seulement si cette page est une archive d'une saison passée
   center:
     width: 2/4
     sections:

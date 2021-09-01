@@ -13,7 +13,7 @@
       <ul>
         <?php foreach($site->social()->toStructure() as $social):?>
           <li>
-            <a href="<?=$social->url()?>" title="<?=$social->text()?>" target="_blank">
+            <a href="<?=$social->link()?>" title="<?=$social->text()?>" target="_blank">
               <i class="fab <?= $social->icon() ?>"></i>
             </a>
           </li>

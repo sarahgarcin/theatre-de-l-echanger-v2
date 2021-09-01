@@ -30,7 +30,7 @@ a {
   text-decoration: none; }
 
 a:visited {
-  color: #000; }
+  color: #3F3F3F; }
 
 a:hover {
   color: #000; }
@@ -61,6 +61,20 @@ p {
 
 p:last-child {
   margin-bottom: 0; }
+
+p a {
+  position: relative; }
+  p a:hover {
+    color: #3F3F3F; }
+  p a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0;
+    left: 0;
+    bottom: 1px;
+    /* <- distance */
+    border-bottom: 2px solid #fff200; }
 
 h1 {
   font-size: 3rem;
@@ -152,6 +166,8 @@ header {
   header .logo {
     padding: 0 20px;
     width: 220px; }
+    header .logo img {
+      height: 100%; }
     header .logo a {
       max-height: 85px; }
   header .now-frame {
@@ -172,6 +188,14 @@ header {
           margin-left: 10px; }
         header .now-frame ul li:last-child:after {
           content: ""; }
+  header .small-menu {
+    font-size: 19px;
+    font-family: "Bebas", sans-serif;
+    text-align: right; }
+    header .small-menu::before {
+      content: "—";
+      padding-bottom: 20px;
+      display: block; }
   header .menu_btn {
     display: block;
     position: relative;
@@ -273,6 +297,42 @@ header {
 
 body[data-template="home"] main, body[data-template="menu"] main {
   max-width: 100%; }
+
+.home-message {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  background: rgba(90, 90, 90, 0.6); }
+  .home-message .close-message {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: #3F3F3F;
+    font-size: 25px;
+    cursor: pointer; }
+  .home-message .home-message-content {
+    position: relative;
+    background: #FFF;
+    width: 95%;
+    top: 50vh;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    margin: auto;
+    padding: 20px;
+    color: #3F3F3F;
+    max-height: 90vh;
+    overflow: scroll; }
+    .home-message .home-message-content a {
+      color: #3F3F3F; }
+      .home-message .home-message-content a:hover {
+        color: #000; }
+    .home-message .home-message-content h3 {
+      font-family: "Bebas", sans-serif;
+      font-size: 21px; }
 
 main {
   padding: 85px 0 0 0;
@@ -499,6 +559,69 @@ footer {
         footer .socialnetworks ul li a:hover {
           color: #000; }
 
+.archives-btn + h1 {
+  margin-top: 20px; }
+
+.archives-btn {
+  text-align: center;
+  margin: auto;
+  margin-top: 20px; }
+  .archives-btn a {
+    background: #fff200;
+    padding: 5px 10px 3px;
+    font-family: "Bebas", sans-serif;
+    letter-spacing: 0.05em;
+    color: #3F3F3F; }
+
+form input[type="text"], form input[type="email"] {
+  width: 100%;
+  max-width: 300px; }
+
+form input[type="checkbox"] {
+  margin: 0;
+  margin-right: 5px;
+  border: 1px solid #3F3F3F;
+  background: #FFF;
+  border-radius: 0;
+  width: 16px;
+  height: 16px; }
+
+form input[type="submit"] {
+  margin: 0;
+  background: #fff200;
+  border: none;
+  padding: 5px 40px 3px;
+  font-family: "Bebas", sans-serif;
+  letter-spacing: 0.05em;
+  color: #3F3F3F;
+  cursor: pointer;
+  margin-top: 40px; }
+
+form input, form label {
+  display: block;
+  font-size: 19px;
+  font-family: "Avenir", sans-serif; }
+
+form .form-group {
+  margin-bottom: 20px; }
+  form .form-group.inline label, form .form-group.inline input {
+    display: inline-block; }
+
+form .required {
+  color: red; }
+
+.uniform-errors {
+  margin-bottom: 20px;
+  color: red;
+  border: 1px solid red;
+  padding: 10px; }
+
+.form-success {
+  margin-bottom: 20px;
+  color: green;
+  border: 1px solid green;
+  padding: 10px; }
+
 .big-menu ul {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -655,25 +778,14 @@ main .content.programmation {
   margin: 0; }
   main .content.programmation .row {
     margin: 0; }
-  main .content.programmation .archives-btn + h1 {
-    margin-top: 20px; }
   main .content.programmation h1 {
     width: 100%;
+    height: 100%;
     text-align: center;
     margin-top: 20px;
     margin-bottom: 40px; }
   main .content.programmation h2 {
     font-size: 30px; }
-  main .content.programmation .archives-btn {
-    text-align: center;
-    margin: auto;
-    margin-top: 20px; }
-    main .content.programmation .archives-btn a {
-      background: #fff200;
-      padding: 5px 10px 3px;
-      font-family: "Bebas", sans-serif;
-      letter-spacing: 0.05em;
-      color: #3F3F3F; }
 
 main .content.article {
   padding: 80px 0;
@@ -699,6 +811,9 @@ main .content.article {
     display: none !important; }
   .hide-for-small-only {
     display: block !important; }
+  .home-message .home-message-content {
+    width: 60%;
+    padding: 40px; }
   main {
     padding: 85px 0 0 0; }
     main .content {
@@ -758,3 +873,25 @@ main .content.article {
         justify-content: flex-end; }
         footer .socialnetworks ul li {
           margin-left: 10px; } }
+
+.editos .archives-btn {
+  margin-top: 70px; }
+
+.editos .content.article {
+  padding-top: 40px; }
+
+.edito-archives .row {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+.edito-archives .prog-list-wrapper > ul > li {
+  background: #fff200;
+  text-align: center;
+  padding: 10px;
+  margin: 20px;
+  min-width: 150px; }
+
+.uniform__potty {
+  position: absolute;
+  left: -9999px; }

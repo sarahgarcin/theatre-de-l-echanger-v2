@@ -39,6 +39,7 @@ columns:
           - spectacle
           - programmation
           - default
+          - menu
       published:
         headline: Publiées
         type: pages
@@ -47,6 +48,7 @@ columns:
           - spectacle
           - programmation
           - default
+          - menu
   right:
     width: 1/4
     sections:

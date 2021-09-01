@@ -1,0 +1,39 @@
+title: Édito
+
+columns:
+  center: 
+    width: 3/4
+    sections: 
+      content: 
+        type: fields
+        fields:
+          contentSettings:
+            label: Contenu de la page
+            type: headline
+          imgleft: 
+            label: Image colonne de gauche
+            type: files
+            multiple: false
+          imageslist: 
+            label: Images
+            type: files
+            help: Images à afficher sous forme de diaporama dans la colonne de gauche
+          infos: 
+            label: Texte synthétique
+            type: markdown
+            size: small
+            help: S'affiche dans la colonne de gauche
+          text:
+            label: Texte
+            type: markdown
+            size: medium
+            help: S'affiche dans la colonne de droite
+          
+  right:
+    width: 1/4
+    sticky: true
+    sections:
+      files:
+        headline: Fichiers
+        type: files
+

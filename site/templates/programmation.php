@@ -15,7 +15,11 @@
 					</a>
 				</div>
 			<?php endif;?>
-			<h1><?= $page->title()?></h1>	
+			<?php if($page->archivesdates()->isNotEmpty()):?>
+				<h1>2020-2021 <br>—<br> <?= $page->title()?></h1>	
+			<?php else: ?>
+				<h1><?= $page->title()?></h1>	
+			<?php endif;?>
 			<ul class='row'>
 					<?php $currentdatetime = date('Y-m-d');?>
 					<?php foreach($page->children()->listed() as $child):?>
@@ -106,7 +110,7 @@
 									</div>
 								</a>
 							</li>
-						<?php if($eventdatetime < $currentdatetime && $page->uid() != "archives" && $eventdatetime != null):
+						<?php if($eventdatetime < $currentdatetime && $page->uid() != "archives" && $eventdatetime != null && $page->parent()->parent()->uid() != "archives"):
 							$newpath = $child->parent()->find('archives')->contentFileDirectory();
 							// echo $child->contentFileDirectory();
 							// echo $newpath;

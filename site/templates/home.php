@@ -1,6 +1,18 @@
 <?php snippet('header') ?>
 <?php snippet('menu') ?>
 
+	<?php if($page->homemessage()->isNotEmpty()):?>
+		<div class="home-message">
+			<div class="home-message-wrapper">
+				<div class="home-message-content">
+					<?= $page->homemessage()->kt() ?>
+					<div class="close-message">
+						╳
+					</div>
+				</div>
+			</div>
+		</div>
+	<?php endif?>
 	<main>
 		<div class="content">
 			<nav class="big-menu">

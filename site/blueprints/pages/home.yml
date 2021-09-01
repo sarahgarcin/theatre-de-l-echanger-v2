@@ -3,10 +3,13 @@ preset: page
 pages: false
 
 fields:
-  info: 
-    label: Informations sur la page 
-    type: info
-    text: Il n'y a rien à paramétrer sur cette page
+  # info: 
+  #   label: Informations sur la page 
+  #   type: info
+  #   text: Il n'y a rien à paramétrer sur cette page
+  homemessage:
+    label: Ajouter un message dans une pop-up sur la page d'accueil 
+    type: markdown
   
 
 

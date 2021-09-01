@@ -16,6 +16,9 @@ header{
 	.logo{
 		padding: 0 $marginNormal;
 		width: 220px;
+		img{
+			height: 100%;
+		}
 		a{
 			max-height: 85px;
 		}
@@ -44,6 +47,16 @@ header{
 					}
 				}
 			}
+		}
+	}
+	.small-menu{
+		font-size: $textSize;
+		font-family: $subtitleFont;
+		text-align: right;
+		&::before{
+			content: "—";
+			padding-bottom: $marginNormal;
+			display: block;
 		}
 	}
 	.menu_btn{

@@ -4,12 +4,13 @@
 
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <meta name="description" content="<?php echo $site->description()->html() ?>">
-  <meta name="keywords" content="<?php echo $site->keywords()->html() ?>">
-  <meta name="author" content="<?php echo $site->author()->html() ?>">
+  <meta name="description" content="<?php echo $site->description() ?>">
+  <meta name="keywords" content="<?php echo $site->keywords() ?>">
+  <meta name="author" content="<?php echo $site->author() ?>">
 
 
   <title><?php echo $site->title()->html() ?> | <?php echo $page->title()->html() ?></title>
+  
   <?php echo css('assets/css/flexboxgrid.min.css') ?>
   <?php echo css('assets/css/fontawesome.min.css') ?>
   <?php
@@ -39,29 +40,36 @@
   <meta name="msapplication-TileColor" content="#00aba9">
   <meta name="theme-color" content="#ffffff">
 
+  <?php if ( $page->hasImages() ): 
+    $image = $page->images()->first();
+  else:
+    $image = $site->logo()->toFile();
+  endif; ?>
 
+  <!-- Google / Search Engine Tags -->
+  <meta itemprop="name" content="<?= $site->title() ?>">
+  <meta itemprop="description" content="<?= $site->description() ?>">
+  <meta itemprop="image" content="<?php echo $image->resize(800, 800)->url() ?>">
 
-  <meta property="og:site_name"    content="<?php echo $site->title()->html() ?>">
-  <meta property="og:url"          content="<?php echo $page->url() ?>">
-  <meta property="og:title"        content="<?php echo $page->title()->html() ?>">
-  <meta property="og:description"  content="<?php e( $page->text()->isNotEmpty(), $page->text()->excerpt(600), $site->description()->excerpt(600)) ?>">
+  <!-- Facebook Meta Tags -->
+  <meta property="og:site_name"    content="<?= $site->title() ?>">
+  <meta property="og:url"          content="<?= $page->url() ?>">
+  <meta property="og:title"        content="<?= $page->title() ?>">
+  <meta property="og:description"  content="<?= $site->description() ?>">
   <meta property="og:type"         content="website">
-  <?php if ( $page->hasImages() && $image = $site->images()->sortBy('sort', 'asc')->first() ): ?>
   <meta property="og:image"        content="<?php echo $image->resize(800, 800)->url() ?>">
-  <?php endif; ?>
 
+  <!-- Twitter Meta Tags -->
   <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:site"        content="<?php echo $page->url() ?>">
-  <meta name="twitter:creator"     content="<?php echo $site->author()->html() ?>">
-  <meta name="twitter:title"       content="<?php echo $page->title()->html() ?>">
-  <meta name="twitter:description" content="<?php e( $page->text()->isNotEmpty(), $page->text()->excerpt(600), $site->description()->excerpt(600)) ?>">
-  <?php if ( $page->hasImages() && $image = $page->images()->sortBy('sort', 'asc')->first() ): ?>
+  <meta name="twitter:site"        content="<?= $page->url() ?>">
+  <meta name="twitter:creator"     content="<?= $site->author() ?>">
+  <meta name="twitter:title"       content="<?= $page->title() ?>">
+  <meta name="twitter:description" content="<?= $site->description() ?>">
   <meta name="twitter:image"       content="<?php echo $image->resize(800, 800)->url() ?>">
-  <?php endif; ?>
 
 
 </head>
 <body
-   data-login="<?php e($kirby->user(),'true', 'false') ?>"
-   data-template="<?php echo $page->template() ?>"
-   data-intended-template="<?php echo $page->intendedTemplate() ?>">
+  data-login="<?php e($kirby->user(),'true', 'false') ?>"
+  data-template="<?php echo $page->template() ?>"
+  data-intended-template="<?php echo $page->intendedTemplate() ?>">
